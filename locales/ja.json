@@ -1,0 +1,43 @@
+{
+  "Hero": {
+    "title1": "AI",
+    "title2": "アニメアート",
+    "title3": "ジェネレーター",
+    "description": "アニメアート制作のための最先端AIテクノロジー。初心者でも簡単に、経験がなくても素晴らしいアニメアートを作成できます。"
+  },
+  "SocialProof": {
+    "maker": "AIで素晴らしいアニメアートを作成"
+  },
+  "Feature": {
+    "title": "特徴"
+  },
+  "Pricing": {
+    "title": "料金プラン",
+    "title2": "無制限アクセスを取得。",
+    "description": "このツールのすべての機能をアンロック。",
+    "doYouLike": "このツールが気に入りましたか？",
+    "follow": "私のTwitterをフォローしてください。"
+  },
+  "WallOfLove": {
+    "title": "ラブウォール",
+    "description1": "このツールを使用し、Twitterで推奨していただいた場合、",
+    "description2": "お知らせください",
+    "description3": "。あなたのツイートと推薦をここに表示します。"
+  },
+  "FAQ": {
+    "title": "よくある質問",
+    "description": "こちらは最もよく寄せられる質問です。"
+  },
+  "CTA": {
+    "title": "今すぐアニメアートを作成",
+    "description1": "作成",
+    "description2": "あなたのアニメ画像を",
+    "description3": "カスタマイズ",
+    "description4": "あなたのシーンを、そして",
+    "description5": "実現",
+    "description6": "あなたのアニメビジョンを！"
+  },
+  "CTAButton": {
+    "title": "画像を生成する"
+  }
+}
