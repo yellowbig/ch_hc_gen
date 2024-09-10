@@ -138,7 +138,6 @@ Use this format to generate a unique and satisfying headcanon for the user.
             {presetCharacters.map((char) => (
               <Button
                 key={char}
-                auto
                 onClick={() => setCharacter(char)}
                 className={character === char ? "bg-blue-500 text-white" : "bg-gray-200"}
               >
@@ -147,7 +146,6 @@ Use this format to generate a unique and satisfying headcanon for the user.
             ))}
           </div>
           <Button
-            auto
             onClick={shufflePresetCharacters}
             className="mt-2 p-2"
             aria-label="Shuffle Characters"
