@@ -25,10 +25,11 @@ export default function Generator({
   const [character, setCharacter] = useState("");
   const [headcanonType, setHeadcanonType] = useState("personality");
   const [style, setStyle] = useState("normal");
-  const [length, setLength] = useState("medium");
+  const [length, setLength] = useState("very_short");
   const [isLoading, setIsLoading] = useState(false);
   const [generatedHeadcanon, setGeneratedHeadcanon] = useState("");
   const [presetCharacters, setPresetCharacters] = useState<string[]>([]);
+  const [description, setDescription] = useState("");
 
   useEffect(() => {
     shufflePresetCharacters();
@@ -47,7 +48,50 @@ export default function Generator({
 
     setIsLoading(true);
     try {
-      const prompt = `Character: ${character}\nType: ${headcanonType}\nStyle: ${style}\nLength: ${length}`;
+      const languageMap: { [key: string]: string } = {
+        zh: "Chinese",
+        en: "English",
+        ja: "Japanese",
+        ar: "Arabic",
+        es: "Spanish",
+        ru: "Russian",
+        hi: "Hindi",
+        // 其他语言代码和名称的映射
+      };
+
+      const languageName = languageMap[langName] || langName;
+
+      const prompt = `
+Generate a character headcanon based on the following details:
+
+Character: ${character}
+Headcanon Type: ${headcanonType}
+Style: ${style}
+Length: ${length}
+Description: ${description}
+LanguageName: ${languageName}
+
+Please ensure the headcanon is engaging and aligns with the provided details. The headcanon should be creative and provide new insights or perspectives about the character. If the description provides specific ideas or themes, incorporate them effectively into the headcanon. The tone and style should match the specified style (e.g., normal, funny, dark), and the length should be appropriate as per the given length. 
+
+Length requirements:
+- Very Short: A single complete sentence not exceeding 10 words.
+- Short: Approximately 50 words.
+- Medium: Approximately 100 words.
+- Long: Approximately 200 words.
+
+If the LanguageName is not English, please translate the entire content into ${languageName}.
+
+Absolutely do not generate any content unrelated to the headcanon. The output should only contain the headcanon itself, without any additional information.
+
+Example:
+Given the character is Harry Potter, the headcanon type is Personality Traits, the style is Funny, the length is very short, and the description is "Imagine Harry having a quirky habit of talking to his owl, Hedwig, as if she were a human friend, sharing his daily thoughts and seeking advice.",the generated headcanon should be:
+Harry often talks to Hedwig as if she were his therapist.
+
+if the LanguageName is Chinese, you should translate the entire content into Chinese like this:
+哈利经常像对待他的治疗师一样与海德薇交谈。
+
+Use this format to generate a unique and satisfying headcanon for the user.
+      `;
 
       const response = await fetch("/api/generateText", {
         method: "POST",
@@ -173,10 +217,22 @@ export default function Generator({
             onChange={(e) => setLength(e.target.value)}
             className="p-2 border rounded w-full"
           >
+            <option value="very_short">Very Short</option>
             <option value="short">Short</option>
             <option value="medium">Medium</option>
             <option value="long">Long</option>
           </select>
+        </div>
+        
+        <div>
+          <h3 className="text-lg font-semibold mb-2">Description</h3>
+          <textarea
+            placeholder="Describe your ideas for the headcanon"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            className="p-2 border rounded w-full"
+            rows={3}
+          />
         </div>
         
         <button
