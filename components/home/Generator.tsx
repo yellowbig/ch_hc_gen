@@ -26,10 +26,12 @@ export default function Generator({
   const [headcanonType, setHeadcanonType] = useState("personality");
   const [style, setStyle] = useState("normal");
   const [length, setLength] = useState("very_short");
-  const [isLoading, setIsLoading] = useState(false);
+  const [isGeneratingHeadcanon, setIsGeneratingHeadcanon] = useState(false);
+  const [isGeneratingImage, setIsGeneratingImage] = useState(false);
   const [generatedHeadcanon, setGeneratedHeadcanon] = useState("");
   const [presetCharacters, setPresetCharacters] = useState<string[]>([]);
   const [description, setDescription] = useState("");
+  const [generatedImage, setGeneratedImage] = useState("");
 
   useEffect(() => {
     shufflePresetCharacters();
@@ -46,7 +48,7 @@ export default function Generator({
       return;
     }
 
-    setIsLoading(true);
+    setIsGeneratingHeadcanon(true);
     try {
       const languageMap: { [key: string]: string } = {
         zh: "Chinese",
@@ -112,7 +114,38 @@ Use this format to generate a unique and satisfying headcanon for the user.
       toast.error(`Failed to generate headcanon: ${error.message}`);
       console.error("Failed to generate headcanon:", error);
     } finally {
-      setIsLoading(false);
+      setIsGeneratingHeadcanon(false);
+    }
+  }
+
+  async function handleGenerateImage() {
+    if (!generatedHeadcanon.trim()) {
+      toast.error("Please generate a headcanon first.");
+      return;
+    }
+
+    setIsGeneratingImage(true);
+    try {
+      const response = await fetch("/api/generateImage", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ prompt: generatedHeadcanon }),
+      });
+
+      if (!response.ok) {
+        const errmsg = await response.text();
+        throw new Error(errmsg || response.statusText);
+      }
+
+      const data = await response.json();
+      setGeneratedImage(data.url);
+    } catch (error: any) {
+      toast.error(`Failed to generate image: ${error.message}`);
+      console.error("Failed to generate image:", error);
+    } finally {
+      setIsGeneratingImage(false);
     }
   }
 
@@ -235,10 +268,18 @@ Use this format to generate a unique and satisfying headcanon for the user.
         
         <button
           onClick={handleGenerateHeadcanon}
-          disabled={isLoading}
+          disabled={isGeneratingHeadcanon}
           className="p-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
         >
-          {isLoading ? "Generating..." : "Generate Headcanon"}
+          {isGeneratingHeadcanon ? "Generating Headcanon..." : "Generate Headcanon"}
+        </button>
+        
+        <button
+          onClick={handleGenerateImage}
+          disabled={!generatedHeadcanon || isGeneratingImage}
+          className={`p-2 text-white rounded transition-colors mt-4 ${!generatedHeadcanon ? "bg-gray-400" : "bg-green-500 hover:bg-green-600"}`}
+        >
+          {isGeneratingImage ? "Generating Image..." : "Generate Image"}
         </button>
       </div>
       
@@ -251,6 +292,13 @@ Use this format to generate a unique and satisfying headcanon for the user.
           className="w-full p-2 border rounded"
         />
       </div>
+
+      {generatedImage && (
+        <div className="mt-6">
+          <h3 className="text-lg font-semibold mb-2">Generated Image</h3>
+          <img src={generatedImage} alt="Generated" className="w-full border rounded" />
+        </div>
+      )}
     </section>
   );
 }
