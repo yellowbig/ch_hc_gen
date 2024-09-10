@@ -4,7 +4,7 @@ import { Button, Input, Select, Radio, Textarea, RadioGroup } from "@nextui-org/
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState, useEffect } from "react";
-import { generatePrompt } from "./promptUtils";
+import { generateHeadcanonPrompt } from "./promptUtils";
 
 const allPresetCharacters = [
   "Harry Potter", "Sherlock Holmes", "Hermione Granger", "Tony Stark", "Katniss Everdeen",
@@ -64,7 +64,7 @@ export default function Generator({
 
       const languageName = languageMap[langName] || langName;
 
-      const prompt = generatePrompt(character, headcanonType, style, length, description, languageName);
+      const prompt = generateHeadcanonPrompt(character, headcanonType, style, length, description, languageName);
 
       const response = await fetch("/api/generateText", {
         method: "POST",
@@ -245,6 +245,16 @@ export default function Generator({
           {isGeneratingHeadcanon ? "Generating Headcanon..." : "Generate Headcanon"}
         </button>
         
+        <div className="mt-6">
+          <h3 className="text-lg font-semibold mb-2">Generated Headcanon</h3>
+          <textarea
+            value={generatedHeadcanon}
+            readOnly
+            rows={5}
+            className="w-full p-2 border rounded"
+          />
+        </div>
+
         <button
           onClick={handleGenerateImage}
           disabled={!generatedHeadcanon || isGeneratingImage}
@@ -252,24 +262,14 @@ export default function Generator({
         >
           {isGeneratingImage ? "Generating Image..." : "Generate Image"}
         </button>
-      </div>
-      
-      <div className="mt-6">
-        <h3 className="text-lg font-semibold mb-2">Generated Headcanon</h3>
-        <textarea
-          value={generatedHeadcanon}
-          readOnly
-          rows={5}
-          className="w-full p-2 border rounded"
-        />
-      </div>
 
-      {generatedImage && (
-        <div className="mt-6">
-          <h3 className="text-lg font-semibold mb-2">Generated Image</h3>
-          <img src={generatedImage} alt="Generated" className="w-full border rounded" />
-        </div>
-      )}
+        {generatedImage && (
+          <div className="mt-6">
+            <h3 className="text-lg font-semibold mb-2">Generated Image</h3>
+            <img src={generatedImage} alt="Generated" className="w-full border rounded" />
+          </div>
+        )}
+      </div>
     </section>
   );
 }

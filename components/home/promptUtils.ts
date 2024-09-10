@@ -1,4 +1,4 @@
-export function generatePrompt(
+export function generateHeadcanonPrompt(
   character: string,
   headcanonType: string,
   style: string,
