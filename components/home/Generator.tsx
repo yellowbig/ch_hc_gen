@@ -27,7 +27,7 @@ export default function Generator({
   const [headcanonType, setHeadcanonType] = useState("personality");
   const [style, setStyle] = useState("normal");
   const [length, setLength] = useState("medium");
-  const [quantity, setQuantity] = useState("3");
+  // 移除了 quantity 状态
   const [isLoading, setIsLoading] = useState(false);
   const [generatedHeadcanon, setGeneratedHeadcanon] = useState("");
   const [presetCharacters, setPresetCharacters] = useState<string[]>([]);
@@ -165,19 +165,6 @@ export default function Generator({
             <option value="short">Short</option>
             <option value="medium">Medium</option>
             <option value="long">Long</option>
-          </select>
-        </div>
-        
-        <div>
-          <h3 className="text-lg font-semibold mb-2">Number of Headcanons</h3>
-          <select
-            value={quantity}
-            onChange={(e) => setQuantity(e.target.value)}
-            className="p-2 border rounded w-full"
-          >
-            <option value="1">1</option>
-            <option value="3">3</option>
-            <option value="5">5</option>
           </select>
         </div>
         
