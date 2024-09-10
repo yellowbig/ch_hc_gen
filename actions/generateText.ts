@@ -27,21 +27,42 @@
 
 import OpenAI from "openai";
 
-const openai = new OpenAI({
+const openrouter = {
   baseURL: "https://openrouter.ai/api/v1",
   apiKey: process.env.OPENROUTER_API_KEY,
-  defaultHeaders: {
-    "HTTP-Referer": process.env.YOUR_SITE_URL, // Optional, for including your app on openrouter.ai rankings.
-    "X-Title": process.env.YOUR_SITE_NAME, // Optional. Shows in rankings on openrouter.ai.
-  }
-});
+  model: "google/gemini-pro-1.5-exp"
+};
+
+const huiyan = {
+  baseURL: "https://api.huiyan-ai.com/v1",
+  apiKey: process.env.HUIYAN_API_KEY,
+  model: "gpt-4o-mini-2024-07-18"
+};
+
+const vip1024 = {
+  baseURL: "https://vip1024.cn/v1",
+  apiKey: process.env.VIP1024_API_KEY,
+  model: "gpt-3.5-turbo" //"gpt-4-0125-preview"
+};
+
+// Set the current provider here
+const currentProvider = vip1024;
 
 export async function generateText(userId: string, userPrompt: string) {
+  const openai = new OpenAI({
+    baseURL: currentProvider.baseURL,
+    apiKey: currentProvider.apiKey,
+    defaultHeaders: {
+      "HTTP-Referer": process.env.YOUR_SITE_URL, // Optional, for including your app on openrouter.ai rankings.
+      "X-Title": process.env.YOUR_SITE_NAME, // Optional. Shows in rankings on openrouter.ai.
+    }
+  });
+
   const prompt = `Generate a headcanon for the character with the following details:
   ${userPrompt}`;
 
   const completion = await openai.chat.completions.create({
-    model: "google/gemini-pro-1.5-exp",
+    model: currentProvider.model,
     messages: [
       { role: "user", content: prompt }
     ],
