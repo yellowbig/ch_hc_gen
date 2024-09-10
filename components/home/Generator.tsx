@@ -1,10 +1,9 @@
 "use client";
 import { ALL_GENERATOR } from "@/config/generator";
 import { Button, Input, Select, Radio, Textarea, RadioGroup } from "@nextui-org/react";
-import { useRouter } from "next/navigation";
-import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useState, useEffect } from "react";
 
 const allPresetCharacters = [
   "Harry Potter", "Sherlock Holmes", "Hermione Granger", "Tony Stark", "Katniss Everdeen",
@@ -48,10 +47,23 @@ export default function Generator({
 
     setIsLoading(true);
     try {
-      // 这里应该是调用后端API的逻辑
-      // 暂时用模拟数据代替
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      setGeneratedHeadcanon(`Generated headcanon for ${character}:\n1. They secretly love pineapple on pizza.\n2. They have a hidden talent for yodeling.\n3. They once accidentally dyed their hair neon green and pretended it was intentional.`);
+      const prompt = `Character: ${character}\nType: ${headcanonType}\nStyle: ${style}\nLength: ${length}`;
+
+      const response = await fetch("/api/generateText", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ prompt }),
+      });
+
+      if (!response.ok) {
+        const errmsg = await response.text();
+        throw new Error(errmsg || response.statusText);
+      }
+
+      const data = await response.json();
+      setGeneratedHeadcanon(data.output);
     } catch (error: any) {
       toast.error(`Failed to generate headcanon: ${error.message}`);
       console.error("Failed to generate headcanon:", error);
