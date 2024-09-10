@@ -27,7 +27,6 @@ export default function Generator({
   const [headcanonType, setHeadcanonType] = useState("personality");
   const [style, setStyle] = useState("normal");
   const [length, setLength] = useState("medium");
-  // 移除了 quantity 状态
   const [isLoading, setIsLoading] = useState(false);
   const [generatedHeadcanon, setGeneratedHeadcanon] = useState("");
   const [presetCharacters, setPresetCharacters] = useState<string[]>([]);
@@ -177,17 +176,15 @@ export default function Generator({
         </button>
       </div>
       
-      {generatedHeadcanon && (
-        <div className="mt-6">
-          <h3 className="text-lg font-semibold mb-2">Generated Headcanon</h3>
-          <textarea
-            value={generatedHeadcanon}
-            readOnly
-            rows={5}
-            className="w-full p-2 border rounded"
-          />
-        </div>
-      )}
+      <div className="mt-6">
+        <h3 className="text-lg font-semibold mb-2">Generated Headcanon</h3>
+        <textarea
+          value={generatedHeadcanon}
+          readOnly
+          rows={5}
+          className="w-full p-2 border rounded"
+        />
+      </div>
     </section>
   );
 }
