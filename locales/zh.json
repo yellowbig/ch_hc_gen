@@ -41,14 +41,43 @@
     "title": "生成图片"
   },
   "Generator": {
-    "title": "立即生成",
-    "textFullFeature": "登录后可使用全部功能。生成大约需要30秒。",
-    "label": "输入",
-    "description": "一位身着礼服的公主站在古老宫殿的花园里。",
-    "buttonTextGenerate": "生成",
-    "buttonTextGenerating": "正在生成",
-    "buttonTextCopy": "复制作品",
-    "resultTitle": "生成的作品",
+    "title": "角色头脑风暴生成器",
+    "characterName": "角色名称",
+    "presetCharacters": "预设角色",
+    "headcanonType": "头脑风暴类型",
+    "style": "风格",
+    "length": "长度",
+    "description": "描述",
+    "generateHeadcanon": "生成头脑风暴",
+    "generatingHeadcanon": "正在生成头脑风暴...",
+    "generatedHeadcanon": "生成的头脑风暴",
+    "imageStyle": "图片风格",
+    "generateImage": "生成图片",
+    "generatingImage": "正在生成图片...",
+    "generatedImage": "生成的图片",
+    "headcanonTypes": {
+      "personality": "性格特征",
+      "background": "背景故事",
+      "relationships": "关系网络",
+      "hobbies": "兴趣爱好",
+      "secrets": "秘密"
+    },
+    "styles": {
+      "normal": "正常",
+      "funny": "搞笑",
+      "dark": "黑暗"
+    },
+    "lengths": {
+      "very_short": "非常短",
+      "short": "短",
+      "medium": "中等",
+      "long": "长"
+    },
+    "imageStyles": {
+      "anime": "动漫",
+      "realistic": "写实",
+      "cartoon": "卡通"
+    },
     "allPresetCharacters": [
       "哈利·波特", "夏洛克·福尔摩斯", "赫敏·格兰杰", "托尼·斯塔克", "凯特尼斯·艾佛丁",
       "卢克·天行者", "艾尔莎", "蝙蝠侠", "神奇女侠", "佛罗多·巴金斯",

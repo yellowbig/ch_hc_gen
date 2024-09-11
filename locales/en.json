@@ -41,14 +41,43 @@
     "title": "Generate Your Picture"
   },
   "Generator": {
-    "title": "Generate Now",
-    "textFullFeature": "Full features available after login. Generation takes about 30 seconds.",
-    "label": "Input",
-    "description": "A princess dressed stands in the garden of an ancient palace.",
-    "buttonTextGenerate": "Generate",
-    "buttonTextGenerating": "Generating",
-    "buttonTextCopy": "Copy Art",
-    "resultTitle": "Generated Art",
+    "title": "Character Headcanon Generator",
+    "characterName": "Character Name",
+    "presetCharacters": "Preset Characters",
+    "headcanonType": "Headcanon Type",
+    "style": "Style",
+    "length": "Length",
+    "description": "Description",
+    "generateHeadcanon": "Generate Headcanon",
+    "generatingHeadcanon": "Generating Headcanon...",
+    "generatedHeadcanon": "Generated Headcanon",
+    "imageStyle": "Image Style",
+    "generateImage": "Generate Image",
+    "generatingImage": "Generating Image...",
+    "generatedImage": "Generated Image",
+    "headcanonTypes": {
+      "personality": "Personality Traits",
+      "background": "Background Story",
+      "relationships": "Relationships",
+      "hobbies": "Hobbies & Interests",
+      "secrets": "Secrets"
+    },
+    "styles": {
+      "normal": "Normal",
+      "funny": "Funny",
+      "dark": "Dark"
+    },
+    "lengths": {
+      "very_short": "Very Short",
+      "short": "Short",
+      "medium": "Medium",
+      "long": "Long"
+    },
+    "imageStyles": {
+      "anime": "Anime",
+      "realistic": "Realistic",
+      "cartoon": "Cartoon"
+    },
     "allPresetCharacters": [
       "Harry Potter", "Sherlock Holmes", "Hermione Granger", "Tony Stark", "Katniss Everdeen",
       "Luke Skywalker", "Elsa", "Batman", "Wonder Woman", "Frodo Baggins",
@@ -56,4 +85,3 @@
     ]
   }
 }
-

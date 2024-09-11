@@ -60,7 +60,7 @@ export default function Generator({
 
     setIsGeneratingHeadcanon(true);
     try {
-      const languageName = languageMap[langName] || langName;
+      const languageName = languageMap[langName as keyof typeof languageMap] || langName;
 
       const prompt = generateHeadcanonPrompt(character, headcanonType, style, length, description, languageName);
 
