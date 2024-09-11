@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState, useEffect } from "react";
 import { generateHeadcanonPrompt, generateImagePrompt } from "./promptUtils";
+import styles from "@/styles/components/Generator.module.css"; // Import custom CSS module
 
 export default function Generator({
   id,
@@ -162,7 +163,7 @@ export default function Generator({
   }
 
   return (
-    <section className="lg:max-w-4xl md:max-w-3xl w-[95%] px-4 sm:px-6 lg:px-8 pb-8 pt-8 md:pt-12 space-y-6">
+    <section className={`lg:max-w-4xl md:max-w-3xl w-[95%] px-4 sm:px-6 lg:px-8 pb-8 pt-8 md:pt-12 space-y-6 ${styles.generatorSection}`}>
       <h2 className="text-3xl font-bold text-center mb-6">{locale.title}</h2>
       
       <div className="flex flex-col gap-4">
@@ -173,7 +174,7 @@ export default function Generator({
             placeholder={locale.characterNamePlaceholder}
             value={character}
             onChange={(e) => setCharacter(e.target.value)}
-            className="p-2 border rounded w-full"
+            className={`p-2 border rounded w-full ${styles.inputField}`}
           />
         </div>
         
@@ -184,7 +185,7 @@ export default function Generator({
               <Button
                 key={char}
                 onClick={() => setCharacter(char)}
-                className={character === char ? "bg-blue-500 text-white" : "bg-gray-200"}
+                className={`${styles.presetButton} ${character === char ? styles.activePresetButton : ""}`}
               >
                 {char}
               </Button>
@@ -192,7 +193,7 @@ export default function Generator({
           </div>
           <Button
             onClick={shufflePresetCharacters}
-            className="mt-2 p-2"
+            className={`mt-2 p-2 ${styles.shuffleButton}`}
             aria-label={locale.shuffleCharacters}
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -210,7 +211,7 @@ export default function Generator({
           <select
             value={headcanonType}
             onChange={(e) => setHeadcanonType(e.target.value)}
-            className="p-2 border rounded w-full"
+            className={`p-2 border rounded w-full ${styles.selectField}`}
           >
             <option value="personality">{locale.headcanonTypes.personality}</option>
             <option value="background">{locale.headcanonTypes.background}</option>
@@ -229,7 +230,7 @@ export default function Generator({
                 value="normal"
                 checked={style === "normal"}
                 onChange={(e) => setStyle(e.target.value)}
-                className="mr-2"
+                className={`mr-2 ${styles.radioButton}`}
               /> {locale.styles.normal}
             </label>
             <label className="flex items-center">
@@ -238,7 +239,7 @@ export default function Generator({
                 value="funny"
                 checked={style === "funny"}
                 onChange={(e) => setStyle(e.target.value)}
-                className="mr-2"
+                className={`mr-2 ${styles.radioButton}`}
               /> {locale.styles.funny}
             </label>
             <label className="flex items-center">
@@ -247,7 +248,7 @@ export default function Generator({
                 value="dark"
                 checked={style === "dark"}
                 onChange={(e) => setStyle(e.target.value)}
-                className="mr-2"
+                className={`mr-2 ${styles.radioButton}`}
               /> {locale.styles.dark}
             </label>
           </div>
@@ -258,7 +259,7 @@ export default function Generator({
           <select
             value={length}
             onChange={(e) => setLength(e.target.value)}
-            className="p-2 border rounded w-full"
+            className={`p-2 border rounded w-full ${styles.selectField}`}
           >
             <option value="very_short">{locale.lengths.very_short}</option>
             <option value="short">{locale.lengths.short}</option>
@@ -273,14 +274,14 @@ export default function Generator({
             placeholder={locale.descriptionPlaceholder}
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="w-full p-2 border rounded"
+            className={`w-full p-2 border rounded ${styles.textareaField}`}
           />
         </div>
 
         <button
           onClick={handleGenerateHeadcanon}
           disabled={isGeneratingHeadcanon}
-          className={`p-2 text-white rounded transition-colors mt-4 ${isGeneratingHeadcanon ? "bg-gray-400" : "bg-blue-500 hover:bg-blue-600"}`}
+          className={`p-2 text-white rounded transition-colors mt-4 ${isGeneratingHeadcanon ? "bg-gray-400" : "bg-blue-500 hover:bg-blue-600"} ${styles.generateButton}`}
         >
           {isGeneratingHeadcanon ? locale.generatingHeadcanon : locale.generateHeadcanon}
         </button>
@@ -291,27 +292,27 @@ export default function Generator({
             value={generatedHeadcanon}
             readOnly
             rows={5}
-            className="w-full p-2 border rounded"
+            className={`w-full p-2 border rounded ${styles.textareaField}`}
           />
         </div>
+      </div>
 
-        <div>
-          <h3 className="text-lg font-semibold mb-2">{locale.imageStyle}</h3>
-          <select
-            value={imageStyle}
-            onChange={(e) => setImageStyle(e.target.value)}
-            className="p-2 border rounded w-full"
-          >
-            <option value="anime">{locale.imageStyles.anime}</option>
-            <option value="realistic">{locale.imageStyles.realistic}</option>
-            <option value="cartoon">{locale.imageStyles.cartoon}</option>
-          </select>
-        </div>
+      <div className="mt-8">
+        <h3 className="text-lg font-semibold mb-2">{locale.imageStyle}</h3>
+        <select
+          value={imageStyle}
+          onChange={(e) => setImageStyle(e.target.value)}
+          className={`p-2 border rounded w-full ${styles.selectField}`}
+        >
+          <option value="anime">{locale.imageStyles.anime}</option>
+          <option value="realistic">{locale.imageStyles.realistic}</option>
+          <option value="cartoon">{locale.imageStyles.cartoon}</option>
+        </select>
 
         <button
           onClick={handleGenerateImage}
           disabled={!generatedHeadcanon || isGeneratingImage}
-          className={`p-2 text-white rounded transition-colors mt-4 ${!generatedHeadcanon ? "bg-gray-400" : "bg-green-500 hover:bg-green-600"}`}
+          className={`p-2 text-white rounded transition-colors mt-4 ${!generatedHeadcanon ? "bg-gray-400" : "bg-green-500 hover:bg-green-600"} ${styles.generateButton}`}
         >
           {isGeneratingImage ? locale.generatingImage : locale.generateImage}
         </button>
@@ -319,9 +320,9 @@ export default function Generator({
         <div className="mt-6">
           <h3 className="text-lg font-semibold mb-2">{locale.generatedImage}</h3>
           {generatedImageUrl ? (
-            <img src={generatedImageUrl} alt="Generated" className="w-full border rounded" />
+            <img src={generatedImageUrl} alt="Generated" className={`w-full border rounded ${styles.generatedImage}`} />
           ) : (
-            <div className="w-full h-64 border rounded flex items-center justify-center">
+            <div className={`w-full h-64 border rounded flex items-center justify-center ${styles.noImageGenerated}`}>
               <span className="text-gray-500">{locale.noImageGenerated}</span>
             </div>
           )}

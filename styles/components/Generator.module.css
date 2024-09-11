@@ -1,0 +1,66 @@
+.generatorSection {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.inputField, .selectField, .textareaField {
+  transition: all 0.3s ease;
+}
+
+.inputField:focus, .selectField:focus, .textareaField:focus {
+  border-color: #0070f3;
+  box-shadow: 0 0 5px rgba(0, 112, 243, 0.5);
+}
+
+.presetButton {
+  background: #e0e7ff;
+  color: #1e3a8a;
+  transition: all 0.3s ease;
+}
+
+.presetButton:hover {
+  background: #c7d2fe;
+}
+
+.activePresetButton {
+  background: #6366f1;
+  color: #fff;
+}
+
+.shuffleButton {
+  background: #f3f4f6;
+  color: #374151;
+  transition: all 0.3s ease;
+}
+
+.shuffleButton:hover {
+  background: #e5e7eb;
+}
+
+.radioButton {
+  accent-color: #6366f1;
+}
+
+.generateButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  transition: all 0.3s ease;
+}
+
+.generateButton:hover {
+  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+}
+
+.generatedImage {
+  transition: all 0.3s ease;
+}
+
+.generatedImage:hover {
+  transform: scale(1.05);
+}
+
+.noImageGenerated {
+  background: #f9fafb;
+}
