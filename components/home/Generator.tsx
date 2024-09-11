@@ -163,141 +163,148 @@ export default function Generator({
   }
 
   return (
-    <section className={`lg:max-w-4xl md:max-w-3xl w-[95%] px-4 sm:px-6 lg:px-8 pb-8 pt-8 md:pt-12 space-y-6 ${styles.generatorSection}`}>
+    <section className="max-w-6xl mx-auto px-4 py-8">
       <h2 className="text-3xl font-bold text-center mb-6">{locale.title}</h2>
       
-      <div className="flex flex-col gap-4">
-        <div>
-          <h3 className="text-lg font-semibold mb-2">{locale.characterName}</h3>
-          <input
-            type="text"
-            placeholder={locale.characterNamePlaceholder}
-            value={character}
-            onChange={(e) => setCharacter(e.target.value)}
-            className={`p-2 border rounded w-full ${styles.inputField}`}
-          />
-        </div>
-        
-        <div>
-          <h3 className="text-lg font-semibold mb-2">{locale.presetCharacters}</h3>
-          <div className="flex flex-wrap gap-2 mb-2">
-            {presetCharacters.map((char) => (
-              <Button
-                key={char}
-                onClick={() => setCharacter(char)}
-                className={`${styles.presetButton} ${character === char ? styles.activePresetButton : ""}`}
+      <div className="flex flex-col md:flex-row gap-8">
+        <div className={styles.leftColumn}>
+          <div>
+            <input
+              type="text"
+              placeholder={locale.characterNamePlaceholder || "Enter Character Name here..."}
+              value={character}
+              onChange={(e) => setCharacter(e.target.value)}
+              className={`w-full border rounded ${styles.inputField}`}
+            />
+          </div>
+          
+          <div className={styles.presetButtonsContainer}>
+            <div className={styles.presetButtonsGrid}>
+              {presetCharacters.slice(0, 5).map((char) => (
+                <button
+                  key={char}
+                  onClick={() => setCharacter(char)}
+                  className={`${styles.presetButton} ${
+                    character === char ? styles.activePresetButton : ""
+                  }`}
+                >
+                  {char}
+                </button>
+              ))}
+              <button
+                onClick={shufflePresetCharacters}
+                className={styles.shuffleButton}
+                aria-label={locale.shuffleCharacters}
               >
-                {char}
-              </Button>
-            ))}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="16 3 21 3 21 8"></polyline>
+                  <line x1="4" y1="20" x2="21" y2="3"></line>
+                  <polyline points="21 16 21 21 16 21"></polyline>
+                  <line x1="15" y1="15" x2="21" y2="21"></line>
+                  <line x1="4" y1="4" x2="9" y2="9"></line>
+                </svg>
+              </button>
+            </div>
+            <div className={styles.divider}></div>
           </div>
-          <Button
-            onClick={shufflePresetCharacters}
-            className={`mt-2 p-2 ${styles.shuffleButton}`}
-            aria-label={locale.shuffleCharacters}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polyline points="16 3 21 3 21 8"></polyline>
-              <line x1="4" y1="20" x2="21" y2="3"></line>
-              <polyline points="21 16 21 21 16 21"></polyline>
-              <line x1="15" y1="15" x2="21" y2="21"></line>
-              <line x1="4" y1="4" x2="9" y2="9"></line>
-            </svg>
-          </Button>
-        </div>
-        
-        <div>
-          <h3 className="text-lg font-semibold mb-2">{locale.headcanonType}</h3>
-          <select
-            value={headcanonType}
-            onChange={(e) => setHeadcanonType(e.target.value)}
-            className={`p-2 border rounded w-full ${styles.selectField}`}
-          >
-            <option value="personality">{locale.headcanonTypes.personality}</option>
-            <option value="background">{locale.headcanonTypes.background}</option>
-            <option value="relationships">{locale.headcanonTypes.relationships}</option>
-            <option value="hobbies">{locale.headcanonTypes.hobbies}</option>
-            <option value="secrets">{locale.headcanonTypes.secrets}</option>
-          </select>
-        </div>
-        
-        <div>
-          <h3 className="text-lg font-semibold mb-2">{locale.style}</h3>
-          <div className="flex gap-4">
-            <label className="flex items-center">
-              <input
-                type="radio"
-                value="normal"
-                checked={style === "normal"}
-                onChange={(e) => setStyle(e.target.value)}
-                className={`mr-2 ${styles.radioButton}`}
-              /> {locale.styles.normal}
-            </label>
-            <label className="flex items-center">
-              <input
-                type="radio"
-                value="funny"
-                checked={style === "funny"}
-                onChange={(e) => setStyle(e.target.value)}
-                className={`mr-2 ${styles.radioButton}`}
-              /> {locale.styles.funny}
-            </label>
-            <label className="flex items-center">
-              <input
-                type="radio"
-                value="dark"
-                checked={style === "dark"}
-                onChange={(e) => setStyle(e.target.value)}
-                className={`mr-2 ${styles.radioButton}`}
-              /> {locale.styles.dark}
-            </label>
+          
+          <div>
+            <h3 className="text-lg font-semibold mb-2">{locale.headcanonType}</h3>
+            <select
+              value={headcanonType}
+              onChange={(e) => setHeadcanonType(e.target.value)}
+              className={`p-2 border rounded w-full ${styles.selectField}`}
+            >
+              <option value="personality">{locale.headcanonTypes.personality}</option>
+              <option value="background">{locale.headcanonTypes.background}</option>
+              <option value="relationships">{locale.headcanonTypes.relationships}</option>
+              <option value="hobbies">{locale.headcanonTypes.hobbies}</option>
+              <option value="secrets">{locale.headcanonTypes.secrets}</option>
+            </select>
           </div>
-        </div>
-        
-        <div>
-          <h3 className="text-lg font-semibold mb-2">{locale.length}</h3>
-          <select
-            value={length}
-            onChange={(e) => setLength(e.target.value)}
-            className={`p-2 border rounded w-full ${styles.selectField}`}
+          
+          <div>
+            <h3 className="text-lg font-semibold mb-2">{locale.style}</h3>
+            <div className="flex gap-4">
+              <label className="flex items-center">
+                <input
+                  type="radio"
+                  value="normal"
+                  checked={style === "normal"}
+                  onChange={(e) => setStyle(e.target.value)}
+                  className={`mr-2 ${styles.radioButton}`}
+                /> {locale.styles.normal}
+              </label>
+              <label className="flex items-center">
+                <input
+                  type="radio"
+                  value="funny"
+                  checked={style === "funny"}
+                  onChange={(e) => setStyle(e.target.value)}
+                  className={`mr-2 ${styles.radioButton}`}
+                /> {locale.styles.funny}
+              </label>
+              <label className="flex items-center">
+                <input
+                  type="radio"
+                  value="dark"
+                  checked={style === "dark"}
+                  onChange={(e) => setStyle(e.target.value)}
+                  className={`mr-2 ${styles.radioButton}`}
+                /> {locale.styles.dark}
+              </label>
+            </div>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-semibold mb-2">{locale.length}</h3>
+            <select
+              value={length}
+              onChange={(e) => setLength(e.target.value)}
+              className={`p-2 border rounded w-full ${styles.selectField}`}
+            >
+              <option value="very_short">{locale.lengths.very_short}</option>
+              <option value="short">{locale.lengths.short}</option>
+              <option value="medium">{locale.lengths.medium}</option>
+              <option value="long">{locale.lengths.long}</option>
+            </select>
+          </div>
+          
+          <div>
+            <h3 className="text-lg font-semibold mb-2">{locale.description}</h3>
+            <textarea
+              placeholder={locale.descriptionPlaceholder}
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+              className={`w-full p-2 border rounded ${styles.textareaField}`}
+            />
+          </div>
+
+          <button
+            onClick={handleGenerateHeadcanon}
+            disabled={isGeneratingHeadcanon}
+            className={`w-full p-2 text-white rounded ${styles.generateButton} ${
+              isGeneratingHeadcanon ? "bg-gray-400" : ""
+            }`}
           >
-            <option value="very_short">{locale.lengths.very_short}</option>
-            <option value="short">{locale.lengths.short}</option>
-            <option value="medium">{locale.lengths.medium}</option>
-            <option value="long">{locale.lengths.long}</option>
-          </select>
-        </div>
-        
-        <div>
-          <h3 className="text-lg font-semibold mb-2">{locale.description}</h3>
-          <textarea
-            placeholder={locale.descriptionPlaceholder}
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            className={`w-full p-2 border rounded ${styles.textareaField}`}
-          />
+            {isGeneratingHeadcanon ? locale.generatingHeadcanon : locale.generateHeadcanon}
+          </button>
         </div>
 
-        <button
-          onClick={handleGenerateHeadcanon}
-          disabled={isGeneratingHeadcanon}
-          className={`p-2 text-white rounded transition-colors mt-4 ${isGeneratingHeadcanon ? "bg-gray-400" : "bg-blue-500 hover:bg-blue-600"} ${styles.generateButton}`}
-        >
-          {isGeneratingHeadcanon ? locale.generatingHeadcanon : locale.generateHeadcanon}
-        </button>
-
-        <div className="mt-6">
-          <h3 className="text-lg font-semibold mb-2">{locale.generatedHeadcanon}</h3>
-          <Textarea
-            value={generatedHeadcanon}
-            readOnly
-            rows={5}
-            className={`w-full p-2 border rounded ${styles.textareaField}`}
-          />
+        <div className="flex-grow">
+          <div>
+            <h3 className="text-lg font-semibold mb-2">{locale.generatedHeadcanon}</h3>
+            <textarea
+              value={generatedHeadcanon}
+              readOnly
+              className={`w-full p-2 border rounded ${styles.textareaField}`}
+              rows={20}
+            />
+          </div>
         </div>
       </div>
 
-      <div className="mt-8">
+      {/* <div className="mt-8">
         <h3 className="text-lg font-semibold mb-2">{locale.imageStyle}</h3>
         <select
           value={imageStyle}
@@ -327,7 +334,7 @@ export default function Generator({
             </div>
           )}
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

@@ -1,43 +1,103 @@
 .generatorSection {
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background: #f3f4f6;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  transition: all 0.3s ease;
 }
 
 .inputField, .selectField, .textareaField {
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease;
+  font-family: 'Arial', sans-serif; /* 设置字体 */
+  font-size: 13px; /* 设置字体大小 */
 }
 
 .inputField:focus, .selectField:focus, .textareaField:focus {
-  border-color: #0070f3;
-  box-shadow: 0 0 5px rgba(0, 112, 243, 0.5);
+  border-color: #3b82f6;
+  outline: none;
 }
 
-.presetButton {
-  background: #e0e7ff;
+.leftColumn {
+  width: 500px; /* 增加宽度以适应每行3个按钮 */
+  flex-shrink: 0;
+}
+
+.presetButtonsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin-top: 12px; /* 减少顶部边距，使输入框与按钮更接近 */
+  margin-bottom: 16px;
+}
+
+.presetButtonsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 固定为3列 */
+  grid-template-rows: repeat(2, auto);
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 16px; /* 增加底部边距，为分割线留出空间 */
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: #e5e7eb; /* 使用浅灰色作为分割线颜色 */
+  margin-bottom: 16px; /* 在分割线下方添加一些间距 */
+}
+
+.presetButton, .shuffleButton {
+  background: #f9fafb;
   color: #1e3a8a;
   transition: all 0.3s ease;
+  padding: 8px 12px;
+  font-family: 'Arial', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  border: 1px solid #e5e7eb;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.presetButton:hover {
-  background: #c7d2fe;
+.shuffleButton {
+  background: #f9fafb;
+  color: #1e3a8a;
+  transition: all 0.3s ease;
+  padding: 8px;
+  font-family: 'Arial', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  height: 36px;
+  width: 36px; /* 设置固定宽度 */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  border: 1px solid #e5e7eb;
+  grid-column: 3; /* 占据第三列 */
+  grid-row: 2;
+  justify-self: end;
+  width: 50%; /* 100%让按钮宽度填满整个格子 */
+}
+
+.shuffleButton svg {
+  width: 20px;
+  height: 20px;
+}
+
+.presetButton:hover, .shuffleButton:hover {
+  background: #e5e7eb;
 }
 
 .activePresetButton {
   background: #6366f1;
   color: #fff;
-}
-
-.shuffleButton {
-  background: #f3f4f6;
-  color: #374151;
-  transition: all 0.3s ease;
-}
-
-.shuffleButton:hover {
-  background: #e5e7eb;
 }
 
 .radioButton {
@@ -46,7 +106,7 @@
 
 .generateButton {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .generateButton:hover {
@@ -63,4 +123,11 @@
 
 .noImageGenerated {
   background: #f9fafb;
+}
+
+.inputField {
+  width: 100%;
+  margin-bottom: 12px;
+  height: 40px; /* 增加高度 */
+  padding: 8px 12px; /* 添加内边距以确保文本垂直居中 */
 }
