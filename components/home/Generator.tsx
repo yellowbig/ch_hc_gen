@@ -54,7 +54,7 @@ export default function Generator({
 
   async function handleGenerateHeadcanon() {
     if (!character.trim()) {
-      toast.error("Please enter a character name or select one from the list.");
+      toast.error(locale.errorEnterCharacterName);
       return;
     }
 
@@ -81,7 +81,7 @@ export default function Generator({
       setGeneratedHeadcanon(data.output);
 
     } catch (error: any) {
-      toast.error(`Failed to generate headcanon: ${error.message}`);
+      toast.error(`${locale.errorGenerateHeadcanon}: ${error.message}`);
       console.error("Failed to generate headcanon:", error);
     } finally {
       setIsGeneratingHeadcanon(false);
@@ -90,7 +90,7 @@ export default function Generator({
 
   async function handleGenerateImage() {
     if (!generatedHeadcanon.trim()) {
-      toast.error("Please generate a headcanon first.");
+      toast.error(locale.errorGenerateHeadcanonFirst);
       return;
     }
 
@@ -116,10 +116,10 @@ export default function Generator({
         setGeneratedImageId(data.id);
         await fetchGeneratedImage(data.id);
       } else {
-        throw new Error('No image ID received');
+        throw new Error(locale.errorNoImageId);
       }
     } catch (error: any) {
-      toast.error(`Failed to generate image: ${error.message}`);
+      toast.error(`${locale.errorGenerateImage}: ${error.message}`);
       console.error("Failed to generate image:", error);
     } finally {
       setIsGeneratingImage(false);
@@ -152,10 +152,10 @@ export default function Generator({
       if (pictureData.url) {
         setGeneratedImageUrl(pictureData.url);
       } else {
-        throw new Error(`No image URL in the response: ${JSON.stringify(pictureData)}`);
+        throw new Error(`${locale.errorNoImageUrl}: ${JSON.stringify(pictureData)}`);
       }
     } catch (error: any) {
-      const errorMessage = `Failed to fetch generated image: ${error.message}`;
+      const errorMessage = `${locale.errorFetchImage}: ${error.message}`;
       toast.error(errorMessage);
       console.error(errorMessage);
     }
@@ -163,14 +163,14 @@ export default function Generator({
 
   return (
     <section className="lg:max-w-4xl md:max-w-3xl w-[95%] px-4 sm:px-6 lg:px-8 pb-8 pt-8 md:pt-12 space-y-6">
-      <h2 className="text-3xl font-bold text-center mb-6">Character Headcanon Generator</h2>
+      <h2 className="text-3xl font-bold text-center mb-6">{locale.title}</h2>
       
       <div className="flex flex-col gap-4">
         <div>
-          <h3 className="text-lg font-semibold mb-2">Character Name</h3>
+          <h3 className="text-lg font-semibold mb-2">{locale.characterName}</h3>
           <input
             type="text"
-            placeholder="Enter a character name"
+            placeholder={locale.characterNamePlaceholder}
             value={character}
             onChange={(e) => setCharacter(e.target.value)}
             className="p-2 border rounded w-full"
@@ -178,7 +178,7 @@ export default function Generator({
         </div>
         
         <div>
-          <h3 className="text-lg font-semibold mb-2">Preset Characters</h3>
+          <h3 className="text-lg font-semibold mb-2">{locale.presetCharacters}</h3>
           <div className="flex flex-wrap gap-2 mb-2">
             {presetCharacters.map((char) => (
               <Button
@@ -193,7 +193,7 @@ export default function Generator({
           <Button
             onClick={shufflePresetCharacters}
             className="mt-2 p-2"
-            aria-label="Shuffle Characters"
+            aria-label={locale.shuffleCharacters}
           >
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="16 3 21 3 21 8"></polyline>
@@ -206,22 +206,22 @@ export default function Generator({
         </div>
         
         <div>
-          <h3 className="text-lg font-semibold mb-2">Headcanon Type</h3>
+          <h3 className="text-lg font-semibold mb-2">{locale.headcanonType}</h3>
           <select
             value={headcanonType}
             onChange={(e) => setHeadcanonType(e.target.value)}
             className="p-2 border rounded w-full"
           >
-            <option value="personality">Personality Traits</option>
-            <option value="background">Background Story</option>
-            <option value="relationships">Relationships</option>
-            <option value="hobbies">Hobbies & Interests</option>
-            <option value="secrets">Secrets</option>
+            <option value="personality">{locale.headcanonTypes.personality}</option>
+            <option value="background">{locale.headcanonTypes.background}</option>
+            <option value="relationships">{locale.headcanonTypes.relationships}</option>
+            <option value="hobbies">{locale.headcanonTypes.hobbies}</option>
+            <option value="secrets">{locale.headcanonTypes.secrets}</option>
           </select>
         </div>
         
         <div>
-          <h3 className="text-lg font-semibold mb-2">Style</h3>
+          <h3 className="text-lg font-semibold mb-2">{locale.style}</h3>
           <div className="flex gap-4">
             <label className="flex items-center">
               <input
@@ -230,7 +230,7 @@ export default function Generator({
                 checked={style === "normal"}
                 onChange={(e) => setStyle(e.target.value)}
                 className="mr-2"
-              /> Normal
+              /> {locale.styles.normal}
             </label>
             <label className="flex items-center">
               <input
@@ -239,7 +239,7 @@ export default function Generator({
                 checked={style === "funny"}
                 onChange={(e) => setStyle(e.target.value)}
                 className="mr-2"
-              /> Funny
+              /> {locale.styles.funny}
             </label>
             <label className="flex items-center">
               <input
@@ -248,29 +248,29 @@ export default function Generator({
                 checked={style === "dark"}
                 onChange={(e) => setStyle(e.target.value)}
                 className="mr-2"
-              /> Dark
+              /> {locale.styles.dark}
             </label>
           </div>
         </div>
         
         <div>
-          <h3 className="text-lg font-semibold mb-2">Length</h3>
+          <h3 className="text-lg font-semibold mb-2">{locale.length}</h3>
           <select
             value={length}
             onChange={(e) => setLength(e.target.value)}
             className="p-2 border rounded w-full"
           >
-            <option value="very_short">Very Short</option>
-            <option value="short">Short</option>
-            <option value="medium">Medium</option>
-            <option value="long">Long</option>
+            <option value="very_short">{locale.lengths.very_short}</option>
+            <option value="short">{locale.lengths.short}</option>
+            <option value="medium">{locale.lengths.medium}</option>
+            <option value="long">{locale.lengths.long}</option>
           </select>
         </div>
         
         <div>
-          <h3 className="text-lg font-semibold mb-2">Description</h3>
+          <h3 className="text-lg font-semibold mb-2">{locale.description}</h3>
           <textarea
-            placeholder="Describe your ideas for the headcanon"
+            placeholder={locale.descriptionPlaceholder}
             value={description}
             onChange={(e) => setDescription(e.target.value)}
             className="w-full p-2 border rounded"
@@ -282,11 +282,11 @@ export default function Generator({
           disabled={isGeneratingHeadcanon}
           className={`p-2 text-white rounded transition-colors mt-4 ${isGeneratingHeadcanon ? "bg-gray-400" : "bg-blue-500 hover:bg-blue-600"}`}
         >
-          {isGeneratingHeadcanon ? "Generating Headcanon..." : "Generate Headcanon"}
+          {isGeneratingHeadcanon ? locale.generatingHeadcanon : locale.generateHeadcanon}
         </button>
 
         <div className="mt-6">
-          <h3 className="text-lg font-semibold mb-2">Generated Headcanon</h3>
+          <h3 className="text-lg font-semibold mb-2">{locale.generatedHeadcanon}</h3>
           <Textarea
             value={generatedHeadcanon}
             readOnly
@@ -296,15 +296,15 @@ export default function Generator({
         </div>
 
         <div>
-          <h3 className="text-lg font-semibold mb-2">Image Style</h3>
+          <h3 className="text-lg font-semibold mb-2">{locale.imageStyle}</h3>
           <select
             value={imageStyle}
             onChange={(e) => setImageStyle(e.target.value)}
             className="p-2 border rounded w-full"
           >
-            <option value="anime">Anime</option>
-            <option value="realistic">Realistic</option>
-            <option value="cartoon">Cartoon</option>
+            <option value="anime">{locale.imageStyles.anime}</option>
+            <option value="realistic">{locale.imageStyles.realistic}</option>
+            <option value="cartoon">{locale.imageStyles.cartoon}</option>
           </select>
         </div>
 
@@ -313,12 +313,12 @@ export default function Generator({
           disabled={isGeneratingImage}
           className={`p-2 text-white rounded transition-colors mt-4 ${isGeneratingImage ? "bg-gray-400" : "bg-blue-500 hover:bg-blue-600"}`}
         >
-          {isGeneratingImage ? "Generating Image..." : "Generate Image"}
+          {isGeneratingImage ? locale.generatingImage : locale.generateImage}
         </button>
 
         {generatedImageUrl && (
           <div className="mt-6">
-            <h3 className="text-lg font-semibold mb-2">Generated Image</h3>
+            <h3 className="text-lg font-semibold mb-2">{locale.generatedImage}</h3>
             <img src={generatedImageUrl} alt="Generated" className="w-full rounded" />
           </div>
         )}
