@@ -39,5 +39,20 @@
   },
   "CTAButton": {
     "title": "生成图片"
+  },
+  "Generator": {
+    "title": "立即生成",
+    "textFullFeature": "登录后可使用全部功能。生成大约需要30秒。",
+    "label": "输入",
+    "description": "一位身着礼服的公主站在古老宫殿的花园里。",
+    "buttonTextGenerate": "生成",
+    "buttonTextGenerating": "正在生成",
+    "buttonTextCopy": "复制作品",
+    "resultTitle": "生成的作品",
+    "allPresetCharacters": [
+      "哈利·波特", "夏洛克·福尔摩斯", "赫敏·格兰杰", "托尼·斯塔克", "凯特尼斯·艾佛丁",
+      "卢克·天行者", "艾尔莎", "蝙蝠侠", "神奇女侠", "佛罗多·巴金斯",
+      "丹妮莉丝·坦格利安", "蜘蛛侠", "劳拉·克劳馥", "印第安纳·琼斯", "达斯·维达"
+    ]
   }
 }

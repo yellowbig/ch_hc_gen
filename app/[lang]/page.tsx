@@ -15,10 +15,6 @@ export default async function LangHome({
 }: {
   params: { lang: string };
 }) {
-  // const langName = (lang && lang[0]) || defaultLocale;
-  // let langName =
-  //   lang && lang[0] && lang[0] !== "index" ? lang[0] : defaultLocale;
-
   const langName = lang !== "" ? lang : defaultLocale;
 
   console.log("lang: ", lang);
@@ -31,7 +27,7 @@ export default async function LangHome({
       {/* Hero Section */}
       <Hero locale={dict.Hero} CTALocale={dict.CTAButton} />
 
-      <Generator id="Generator" locale={dict.Feature} langName={langName} />
+      <Generator id="Generator" locale={dict.Generator} langName={langName} />
 
       <section className="px-4 sm:px-2 lg:px-4 pb-8 pt-8 md:pt-12 space-y-6">
         <div className="flex justify-between items-center p-2">

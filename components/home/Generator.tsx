@@ -6,12 +6,6 @@ import "react-toastify/dist/ReactToastify.css";
 import { useState, useEffect } from "react";
 import { generateHeadcanonPrompt, generateImagePrompt } from "./promptUtils";
 
-const allPresetCharacters = [
-  "Harry Potter", "Sherlock Holmes", "Hermione Granger", "Tony Stark", "Katniss Everdeen",
-  "Luke Skywalker", "Elsa", "Batman", "Wonder Woman", "Frodo Baggins",
-  "Daenerys Targaryen", "Spider-Man", "Lara Croft", "Indiana Jones", "Darth Vader"
-];
-
 export default function Generator({
   id,
   locale,
@@ -21,6 +15,9 @@ export default function Generator({
   locale: any;
   langName: string;
 }) {
+  console.log("locale: ", locale);
+
+  const allPresetCharacters = locale.allPresetCharacters || [];
   const GENERATOR = ALL_GENERATOR[`GENERATOR_${langName.toUpperCase()}`];
 
   const [character, setCharacter] = useState("");
@@ -35,6 +32,16 @@ export default function Generator({
   const [generatedImageId, setGeneratedImageId] = useState("");
   const [generatedImageUrl, setGeneratedImageUrl] = useState("");
   const [imageStyle, setImageStyle] = useState("anime");
+
+  const languageMap = {
+    zh: "Chinese",
+    en: "English",
+    ja: "Japanese",
+    ar: "Arabic",
+    es: "Spanish",
+    ru: "Russian",
+    hi: "Hindi"
+  };
 
   useEffect(() => {
     shufflePresetCharacters();
@@ -53,16 +60,6 @@ export default function Generator({
 
     setIsGeneratingHeadcanon(true);
     try {
-      const languageMap: { [key: string]: string } = {
-        zh: "Chinese",
-        en: "English",
-        ja: "Japanese",
-        ar: "Arabic",
-        es: "Spanish",
-        ru: "Russian",
-        hi: "Hindi",
-      };
-
       const languageName = languageMap[langName] || langName;
 
       const prompt = generateHeadcanonPrompt(character, headcanonType, style, length, description, languageName);
@@ -306,31 +303,25 @@ export default function Generator({
             className="p-2 border rounded w-full"
           >
             <option value="anime">Anime</option>
-            <option value="manga">Manga</option>
             <option value="realistic">Realistic</option>
             <option value="cartoon">Cartoon</option>
-            <option value="pixel">Pixel Art</option>
           </select>
         </div>
 
         <button
           onClick={handleGenerateImage}
-          disabled={!generatedHeadcanon || isGeneratingImage}
-          className={`p-2 text-white rounded transition-colors mt-4 ${!generatedHeadcanon ? "bg-gray-400" : "bg-green-500 hover:bg-green-600"}`}
+          disabled={isGeneratingImage}
+          className={`p-2 text-white rounded transition-colors mt-4 ${isGeneratingImage ? "bg-gray-400" : "bg-blue-500 hover:bg-blue-600"}`}
         >
           {isGeneratingImage ? "Generating Image..." : "Generate Image"}
         </button>
 
-        <div className="mt-6">
-          <h3 className="text-lg font-semibold mb-2">Generated Image</h3>
-          {generatedImageUrl ? (
-            <img src={generatedImageUrl} alt="Generated" className="w-full border rounded" />
-          ) : (
-            <div className="w-full h-64 border rounded flex items-center justify-center">
-              <span className="text-gray-500">No image generated yet</span>
-            </div>
-          )}
-        </div>
+        {generatedImageUrl && (
+          <div className="mt-6">
+            <h3 className="text-lg font-semibold mb-2">Generated Image</h3>
+            <img src={generatedImageUrl} alt="Generated" className="w-full rounded" />
+          </div>
+        )}
       </div>
     </section>
   );

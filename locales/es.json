@@ -39,5 +39,20 @@
   },
   "CTAButton": {
     "title": "Generar tu imagen"
+  },
+  "Generator": {
+    "title": "Generar ahora",
+    "textFullFeature": "Todas las funciones están disponibles después de iniciar sesión. La generación tarda unos 30 segundos.",
+    "label": "Entrada",
+    "description": "Una princesa vestida de gala se encuentra en el jardín de un antiguo palacio.",
+    "buttonTextGenerate": "Generar",
+    "buttonTextGenerating": "Generando",
+    "buttonTextCopy": "Copiar arte",
+    "resultTitle": "Arte generado",
+    "allPresetCharacters": [
+      "Harry Potter", "Sherlock Holmes", "Hermione Granger", "Tony Stark", "Katniss Everdeen",
+      "Luke Skywalker", "Elsa", "Batman", "Wonder Woman", "Frodo Baggins",
+      "Daenerys Targaryen", "Spider-Man", "Lara Croft", "Indiana Jones", "Darth Vader"
+    ]
   }
 }
