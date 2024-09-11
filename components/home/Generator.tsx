@@ -4,7 +4,7 @@ import { Button, Input, Select, Radio, Textarea, RadioGroup } from "@nextui-org/
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState, useEffect } from "react";
-import { generateHeadcanonPrompt } from "./promptUtils";
+import { generateHeadcanonPrompt, generateImagePrompt } from "./promptUtils";
 
 const allPresetCharacters = [
   "Harry Potter", "Sherlock Holmes", "Hermione Granger", "Tony Stark", "Katniss Everdeen",
@@ -34,6 +34,7 @@ export default function Generator({
   const [description, setDescription] = useState("");
   const [generatedImageId, setGeneratedImageId] = useState("");
   const [generatedImageUrl, setGeneratedImageUrl] = useState("");
+  const [imageStyle, setImageStyle] = useState("anime");
 
   useEffect(() => {
     shufflePresetCharacters();
@@ -52,10 +53,6 @@ export default function Generator({
 
     setIsGeneratingHeadcanon(true);
     try {
-      // Replace this hardcoded headcanon with the actual generated headcanon
-      // setGeneratedHeadcanon("Darth Vader secretly enjoys stargazing on quiet nights.");
-
-      // Original code for generating headcanon
       const languageMap: { [key: string]: string } = {
         zh: "Chinese",
         en: "English",
@@ -64,7 +61,6 @@ export default function Generator({
         es: "Spanish",
         ru: "Russian",
         hi: "Hindi",
-        // 其他语言代码和名称的映射
       };
 
       const languageName = languageMap[langName] || langName;
@@ -103,12 +99,13 @@ export default function Generator({
 
     setIsGeneratingImage(true);
     try {
+      const prompt = generateImagePrompt(generatedHeadcanon, imageStyle);
       const response = await fetch("/api/generateImage", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ prompt: generatedHeadcanon }),
+        body: JSON.stringify({ prompt }),
       });
 
       if (!response.ok) {
@@ -279,27 +276,41 @@ export default function Generator({
             placeholder="Describe your ideas for the headcanon"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
-            className="p-2 border rounded w-full"
-            rows={3}
+            className="w-full p-2 border rounded"
           />
         </div>
-        
+
         <button
           onClick={handleGenerateHeadcanon}
           disabled={isGeneratingHeadcanon}
-          className="p-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+          className={`p-2 text-white rounded transition-colors mt-4 ${isGeneratingHeadcanon ? "bg-gray-400" : "bg-blue-500 hover:bg-blue-600"}`}
         >
           {isGeneratingHeadcanon ? "Generating Headcanon..." : "Generate Headcanon"}
         </button>
-        
+
         <div className="mt-6">
           <h3 className="text-lg font-semibold mb-2">Generated Headcanon</h3>
-          <textarea
+          <Textarea
             value={generatedHeadcanon}
             readOnly
             rows={5}
             className="w-full p-2 border rounded"
           />
+        </div>
+
+        <div>
+          <h3 className="text-lg font-semibold mb-2">Image Style</h3>
+          <select
+            value={imageStyle}
+            onChange={(e) => setImageStyle(e.target.value)}
+            className="p-2 border rounded w-full"
+          >
+            <option value="anime">Anime</option>
+            <option value="manga">Manga</option>
+            <option value="realistic">Realistic</option>
+            <option value="cartoon">Cartoon</option>
+            <option value="pixel">Pixel Art</option>
+          </select>
         </div>
 
         <button

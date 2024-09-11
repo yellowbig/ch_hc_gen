@@ -38,3 +38,8 @@ if the LanguageName is Chinese, you should translate the entire content into Chi
 Use this format to generate a unique and satisfying headcanon for the user.
   `;
 }
+
+export function generateImagePrompt(headcanon: string, imageStyle: string): string {
+
+  return `Generate an image in ${imageStyle} style based on the following headcanon: ${headcanon}`;
+}
