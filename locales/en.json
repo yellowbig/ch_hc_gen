@@ -55,6 +55,7 @@
     "generateImage": "Generate Image",
     "generatingImage": "Generating Image...",
     "generatedImage": "Generated Image",
+    "noImageGenerated": "No image generated yet",
     "headcanonTypes": {
       "personality": "Personality Traits",
       "background": "Background Story",

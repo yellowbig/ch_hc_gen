@@ -310,18 +310,22 @@ export default function Generator({
 
         <button
           onClick={handleGenerateImage}
-          disabled={isGeneratingImage}
-          className={`p-2 text-white rounded transition-colors mt-4 ${isGeneratingImage ? "bg-gray-400" : "bg-blue-500 hover:bg-blue-600"}`}
+          disabled={!generatedHeadcanon || isGeneratingImage}
+          className={`p-2 text-white rounded transition-colors mt-4 ${!generatedHeadcanon ? "bg-gray-400" : "bg-green-500 hover:bg-green-600"}`}
         >
           {isGeneratingImage ? locale.generatingImage : locale.generateImage}
         </button>
 
-        {generatedImageUrl && (
-          <div className="mt-6">
-            <h3 className="text-lg font-semibold mb-2">{locale.generatedImage}</h3>
-            <img src={generatedImageUrl} alt="Generated" className="w-full rounded" />
-          </div>
-        )}
+        <div className="mt-6">
+          <h3 className="text-lg font-semibold mb-2">{locale.generatedImage}</h3>
+          {generatedImageUrl ? (
+            <img src={generatedImageUrl} alt="Generated" className="w-full border rounded" />
+          ) : (
+            <div className="w-full h-64 border rounded flex items-center justify-center">
+              <span className="text-gray-500">{locale.noImageGenerated}</span>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );

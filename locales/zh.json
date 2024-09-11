@@ -55,6 +55,7 @@
     "generateImage": "生成图片",
     "generatingImage": "正在生成图片...",
     "generatedImage": "生成的图片",
+    "noImageGenerated": "还没有生成图片",
     "headcanonTypes": {
       "personality": "性格特征",
       "background": "背景故事",
