@@ -24,7 +24,7 @@ export async function generateImage(userId: string, userPrompt: string) {
     prompt_strength: 0.8,
   };
 
-  const output = await replicate.run("black-forest-labs/flux-dev", { input });
+  const output = await replicate.run("black-forest-labs/flux-schnell", { input });
 
   if (Array.isArray(output) && output.length > 0) {
     const imageUrl = output[0];

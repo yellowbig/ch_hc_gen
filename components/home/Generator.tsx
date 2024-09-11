@@ -32,7 +32,8 @@ export default function Generator({
   const [generatedHeadcanon, setGeneratedHeadcanon] = useState("");
   const [presetCharacters, setPresetCharacters] = useState<string[]>([]);
   const [description, setDescription] = useState("");
-  const [generatedImage, setGeneratedImage] = useState("");
+  const [generatedImageId, setGeneratedImageId] = useState("");
+  const [generatedImageUrl, setGeneratedImageUrl] = useState("");
 
   useEffect(() => {
     shufflePresetCharacters();
@@ -51,6 +52,10 @@ export default function Generator({
 
     setIsGeneratingHeadcanon(true);
     try {
+      // Replace this hardcoded headcanon with the actual generated headcanon
+      // setGeneratedHeadcanon("Darth Vader secretly enjoys stargazing on quiet nights.");
+
+      // Original code for generating headcanon
       const languageMap: { [key: string]: string } = {
         zh: "Chinese",
         en: "English",
@@ -81,6 +86,7 @@ export default function Generator({
 
       const data = await response.json();
       setGeneratedHeadcanon(data.output);
+
     } catch (error: any) {
       toast.error(`Failed to generate headcanon: ${error.message}`);
       console.error("Failed to generate headcanon:", error);
@@ -111,12 +117,53 @@ export default function Generator({
       }
 
       const data = await response.json();
-      setGeneratedImage(data.url);
+      
+      if (data.id) {
+        setGeneratedImageId(data.id);
+        await fetchGeneratedImage(data.id);
+      } else {
+        throw new Error('No image ID received');
+      }
     } catch (error: any) {
       toast.error(`Failed to generate image: ${error.message}`);
       console.error("Failed to generate image:", error);
     } finally {
       setIsGeneratingImage(false);
+    }
+  }
+
+  async function fetchGeneratedImage(imageId: string) {
+    try {
+      console.log("Fetching image with ID:", imageId);
+      const response = await fetch(`/api/picture?id=${imageId}`);
+      console.log("Fetch response status:", response.status);
+      
+      const responseText = await response.text();
+      console.log("Raw response:", responseText);
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}, body: ${responseText}`);
+      }
+
+      let pictureData;
+      try {
+        pictureData = JSON.parse(responseText);
+      } catch (parseError) {
+        console.error("Failed to parse JSON:", parseError);
+        throw new Error(`Invalid JSON in response: ${responseText}`);
+      }
+
+      console.log("Parsed picture data:", pictureData);
+
+      if (pictureData.url) {
+        setGeneratedImageUrl(pictureData.url);
+      } else {
+        throw new Error(`No image URL in the response: ${JSON.stringify(pictureData)}`);
+      }
+    } catch (error: any) {
+      const errorMessage = `Failed to fetch generated image: ${error.message}`;
+      toast.error(errorMessage);
+      console.error(errorMessage);
     }
   }
 
@@ -263,12 +310,16 @@ export default function Generator({
           {isGeneratingImage ? "Generating Image..." : "Generate Image"}
         </button>
 
-        {generatedImage && (
-          <div className="mt-6">
-            <h3 className="text-lg font-semibold mb-2">Generated Image</h3>
-            <img src={generatedImage} alt="Generated" className="w-full border rounded" />
-          </div>
-        )}
+        <div className="mt-6">
+          <h3 className="text-lg font-semibold mb-2">Generated Image</h3>
+          {generatedImageUrl ? (
+            <img src={generatedImageUrl} alt="Generated" className="w-full border rounded" />
+          ) : (
+            <div className="w-full h-64 border rounded flex items-center justify-center">
+              <span className="text-gray-500">No image generated yet</span>
+            </div>
+          )}
+        </div>
       </div>
     </section>
   );
