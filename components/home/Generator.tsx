@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useState, useEffect } from "react";
 import { generateHeadcanonPrompt, generateImagePrompt } from "./promptUtils";
 import styles from "@/styles/components/Generator.module.css"; // Import custom CSS module
+import Tooltip from '@/components/common/Tooltip';
 
 export default function Generator({
   id,
@@ -174,7 +175,7 @@ export default function Generator({
               placeholder={locale.characterNamePlaceholder || "Enter Character Name here..."}
               value={character}
               onChange={(e) => setCharacter(e.target.value)}
-              className={`w-full border rounded ${styles.inputField}`}
+              className={`w-full p-2 border rounded ${styles.inputField}`}
             />
           </div>
           
@@ -208,12 +209,46 @@ export default function Generator({
             <div className={styles.divider}></div>
           </div>
           
-          <div>
-            <h3 className="text-lg font-semibold mb-2">{locale.headcanonType}</h3>
+          <div className={styles.formSection}>
+            <label className={styles.formLabel}>
+              <Tooltip text={locale.writingStyleTooltip}>
+                <span className={styles.infoIcon}>i</span>
+              </Tooltip>
+              {locale.writingStyle}
+            </label>
+            <div className={styles.buttonGroup}>
+              <button
+                onClick={() => setStyle("normal")}
+                className={`${styles.styleButton} ${style === "normal" ? styles.activeStyleButton : ""}`}
+              >
+                {locale.styles.normal}
+              </button>
+              <button
+                onClick={() => setStyle("funny")}
+                className={`${styles.styleButton} ${style === "funny" ? styles.activeStyleButton : ""}`}
+              >
+                {locale.styles.funny}
+              </button>
+              <button
+                onClick={() => setStyle("dark")}
+                className={`${styles.styleButton} ${style === "dark" ? styles.activeStyleButton : ""}`}
+              >
+                {locale.styles.dark}
+              </button>
+            </div>
+          </div>
+          
+          <div className={styles.formSection}>
+            <label className={styles.formLabel}>
+              <Tooltip text={locale.headcanonTypeTooltip}>
+                <span className={styles.infoIcon}>i</span>
+              </Tooltip>
+              {locale.headcanonType}
+            </label>
             <select
               value={headcanonType}
               onChange={(e) => setHeadcanonType(e.target.value)}
-              className={`p-2 border rounded w-full ${styles.selectField}`}
+              className={styles.selectField}
             >
               <option value="personality">{locale.headcanonTypes.personality}</option>
               <option value="background">{locale.headcanonTypes.background}</option>
@@ -223,45 +258,17 @@ export default function Generator({
             </select>
           </div>
           
-          <div>
-            <h3 className="text-lg font-semibold mb-2">{locale.style}</h3>
-            <div className="flex gap-4">
-              <label className="flex items-center">
-                <input
-                  type="radio"
-                  value="normal"
-                  checked={style === "normal"}
-                  onChange={(e) => setStyle(e.target.value)}
-                  className={`mr-2 ${styles.radioButton}`}
-                /> {locale.styles.normal}
-              </label>
-              <label className="flex items-center">
-                <input
-                  type="radio"
-                  value="funny"
-                  checked={style === "funny"}
-                  onChange={(e) => setStyle(e.target.value)}
-                  className={`mr-2 ${styles.radioButton}`}
-                /> {locale.styles.funny}
-              </label>
-              <label className="flex items-center">
-                <input
-                  type="radio"
-                  value="dark"
-                  checked={style === "dark"}
-                  onChange={(e) => setStyle(e.target.value)}
-                  className={`mr-2 ${styles.radioButton}`}
-                /> {locale.styles.dark}
-              </label>
-            </div>
-          </div>
-          
-          <div>
-            <h3 className="text-lg font-semibold mb-2">{locale.length}</h3>
+          <div className={styles.formSection}>
+            <label className={styles.formLabel}>
+              <Tooltip text={locale.lengthTooltip}>
+                <span className={styles.infoIcon}>i</span>
+              </Tooltip>
+              {locale.length}
+            </label>
             <select
               value={length}
               onChange={(e) => setLength(e.target.value)}
-              className={`p-2 border rounded w-full ${styles.selectField}`}
+              className={styles.selectField}
             >
               <option value="very_short">{locale.lengths.very_short}</option>
               <option value="short">{locale.lengths.short}</option>

@@ -45,6 +45,12 @@ const vip1024 = {
   model: "gpt-3.5-turbo" //"gpt-4-0125-preview"
 };
 
+const linktre = {
+  baseURL: "https://openai.linktre.cc/v1",
+  apiKey: process.env.LINKTRE_API_KEY,
+  model: "claude-3-5-sonnet-20240620" //"gpt-4-0125-preview"
+};
+
 // Set the current provider here
 const currentProvider = vip1024;
 

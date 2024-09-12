@@ -45,7 +45,7 @@
     "characterName": "Character Name",
     "presetCharacters": "Preset Characters",
     "headcanonType": "Headcanon Type",
-    "style": "Style",
+    "writingStyle": "Writing Style",
     "length": "Length",
     "description": "Description",
     "generateHeadcanon": "Generate Headcanon",
@@ -56,6 +56,9 @@
     "generatingImage": "Generating Image...",
     "generatedImage": "Generated Image",
     "noImageGenerated": "No image generated yet",
+    "writingStyleTooltip": "Choose the tone and style for your generated headcanon.",
+    "headcanonTypeTooltip": "Select the type of headcanon you want to generate.",
+    "lengthTooltip": "Decide how long you want your generated headcanon to be.",
     "headcanonTypes": {
       "personality": "Personality Traits",
       "background": "Background Story",
@@ -83,7 +86,6 @@
       "Harry Potter", "Sherlock Holmes", "Hermione Granger", "Tony Stark", "Katniss Everdeen",
       "Luke Skywalker", "Elsa", "Batman", "Wonder Woman", "Frodo Baggins",
       "Daenerys Targaryen", "Spider-Man", "Lara Croft", "Indiana Jones", "Darth Vader"
-    ],
-    "characterNamePlaceholder": "Enter Character Name here..."
+    ]
   }
 }
