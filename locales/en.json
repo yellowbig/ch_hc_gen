@@ -86,6 +86,9 @@
       "Harry Potter", "Sherlock Holmes", "Hermione Granger", "Tony Stark", "Katniss Everdeen",
       "Luke Skywalker", "Elsa", "Batman", "Wonder Woman", "Frodo Baggins",
       "Daenerys Targaryen", "Spider-Man", "Lara Croft", "Indiana Jones", "Darth Vader"
-    ]
+    ],
+    "characterNamePlaceholder": "Enter character name here...",
+    "descriptionPlaceholder": "Enter additional details about the character, such as personality traits, background story, etc...",
+    "generatedHeadcanonPlaceholder": "The generated headcanon content will be displayed here..."
   }
 }

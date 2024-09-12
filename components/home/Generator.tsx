@@ -168,7 +168,7 @@ export default function Generator({
       <h2 className="text-3xl font-bold text-center mb-6">{locale.title}</h2>
       
       <div className="flex flex-col md:flex-row gap-8">
-        <div className={styles.leftColumn}>
+        <div className={`${styles.leftColumn} w-full md:w-1/2`}>
           <div>
             <input
               type="text"
@@ -278,13 +278,13 @@ export default function Generator({
           </div>
           
           <div>
-            <h3 className="text-lg font-semibold mb-2">{locale.description}</h3>
             <textarea
               placeholder={locale.descriptionPlaceholder}
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               className={`w-full p-2 border rounded ${styles.textareaField}`}
             />
+            <div className={styles.divider}></div>
           </div>
 
           <button
@@ -298,16 +298,14 @@ export default function Generator({
           </button>
         </div>
 
-        <div className="flex-grow">
-          <div>
-            <h3 className="text-lg font-semibold mb-2">{locale.generatedHeadcanon}</h3>
-            <textarea
-              value={generatedHeadcanon}
-              readOnly
-              className={`w-full p-2 border rounded ${styles.textareaField}`}
-              rows={20}
-            />
-          </div>
+        <div className="flex-grow w-full md:w-1/2 flex flex-col">
+          <textarea
+            value={generatedHeadcanon}
+            readOnly
+            placeholder={locale.generatedHeadcanonPlaceholder}
+            className={`w-full p-2 border rounded ${styles.textareaField} flex-grow`}
+            rows={20}
+          />
         </div>
       </div>
 

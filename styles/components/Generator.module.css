@@ -141,7 +141,7 @@
 
 .formLabel {
   font-family: 'Arial', sans-serif;
-  font-size: 15px;  /* 从 14px 增加到 16px */
+  font-size: 14px;
   font-weight: normal;
   color: #333;
   display: flex;
@@ -172,33 +172,24 @@
   width: auto;
   min-width: 150px;
   height: 36px;
-  padding: 0 30px 0 12px;  /* 增加右边的 padding 为箭头留出空间 */
+  padding: 0 12px;
   border: 1px solid #e5e7eb;
   border-radius: 6px;
   background-color: #fff;
   font-family: 'Arial', sans-serif;
   font-size: 14px;
   color: #333;
-  appearance: none;  /* 移除默认的下拉箭头 */
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-  background-repeat: no-repeat;
-  background-position: right 8px center;
-  background-size: 16px;
+  appearance: none;
+  padding-right: 30px; /* 为箭头留出空间 */
 }
 
-/* 为 Firefox 添加特定样式 */
-.selectField::-ms-expand {
-  display: none;
-}
-
-/* 为 IE 10+ 添加特定样式 */
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .selectField {
-    padding-right: 30px;
-    background-image: none;
-  }
+.selectField::after {
+  content: '\25BC'; /* Unicode 下箭头字符 */
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 
 .buttonGroup {

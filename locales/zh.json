@@ -56,6 +56,9 @@
     "generatingImage": "正在生成图片...",
     "generatedImage": "生成的图片",
     "noImageGenerated": "还没有生成图片",
+    "writingStyleTooltip": "选择生成的头脑风暴的写作风格",
+    "headcanonTypeTooltip": "选择你想要生成的头脑风暴类型",
+    "lengthTooltip": "选择生成的头脑风暴的长度",
     "headcanonTypes": {
       "personality": "性格特征",
       "background": "背景故事",
@@ -84,6 +87,8 @@
       "卢克·天行者", "艾尔莎", "蝙蝠侠", "神奇女侠", "佛罗多·巴金斯",
       "丹妮莉丝·坦格利安", "蜘蛛侠", "劳拉·克劳馥", "印第安纳·琼斯", "达斯·维达"
     ],
-    "characterNamePlaceholder": "在这里输入角色名称..."
+    "characterNamePlaceholder": "在此输入角色名称...",
+    "descriptionPlaceholder": "输入角色的额外描述，如性格特点、背景故事等...",
+    "generatedHeadcanonPlaceholder": "生成的头脑风暴内容将显示在这里..."
   }
 }
