@@ -168,7 +168,7 @@ export default function Generator({
       <h2 className="text-3xl font-bold text-center mb-6">{locale.title}</h2>
       
       <div className="flex flex-col md:flex-row gap-8">
-        <div className={`${styles.leftColumn} w-full md:w-1/2`}>
+        <div className={`${styles.leftColumn} w-full md:w-5/12 md:flex-shrink-0`}>
           <div>
             <input
               type="text"
@@ -287,18 +287,21 @@ export default function Generator({
             <div className={styles.divider}></div>
           </div>
 
-          <button
-            onClick={handleGenerateHeadcanon}
-            disabled={isGeneratingHeadcanon}
-            className={`w-full p-2 text-white rounded ${styles.generateButton} ${
-              isGeneratingHeadcanon ? "bg-gray-400" : ""
-            }`}
-          >
-            {isGeneratingHeadcanon ? locale.generatingHeadcanon : locale.generateHeadcanon}
-          </button>
+          <div className="flex justify-center"> {/* 新增的容器 div */}
+            <button
+              onClick={handleGenerateHeadcanon}
+              disabled={isGeneratingHeadcanon}
+              className={`w-auto px-4 p-2 text-white rounded ${styles.generateButton} ${
+                isGeneratingHeadcanon ? "bg-gray-400" : ""
+              }`}
+            >
+              {isGeneratingHeadcanon ? locale.generatingHeadcanon : locale.generateHeadcanon}
+            </button>
+          </div>
+
         </div>
 
-        <div className="flex-grow w-full md:w-1/2 flex flex-col">
+        <div className="w-full md:flex-grow flex flex-col">
           <textarea
             value={generatedHeadcanon}
             readOnly

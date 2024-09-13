@@ -27,7 +27,9 @@ export default async function LangHome({
       {/* Hero Section */}
       <Hero locale={dict.Hero} CTALocale={dict.CTAButton} />
 
-      <Generator id="Generator" locale={dict.Generator} langName={langName} />
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+        <Generator id="Generator" locale={dict.Generator} langName={langName} />
+      </div>
 
       <section className="px-4 sm:px-2 lg:px-4 pb-8 pt-8 md:pt-12 space-y-6">
         <div className="flex justify-between items-center p-2">
