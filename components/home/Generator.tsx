@@ -312,37 +312,64 @@ export default function Generator({
         </div>
       </div>
 
-      {/* <div className="mt-8">
-        <h3 className="text-lg font-semibold mb-2">{locale.imageStyle}</h3>
-        <select
-          value={imageStyle}
-          onChange={(e) => setImageStyle(e.target.value)}
-          className={`p-2 border rounded w-full ${styles.selectField}`}
-        >
-          <option value="anime">{locale.imageStyles.anime}</option>
-          <option value="realistic">{locale.imageStyles.realistic}</option>
-          <option value="cartoon">{locale.imageStyles.cartoon}</option>
-        </select>
-
-        <button
-          onClick={handleGenerateImage}
-          disabled={!generatedHeadcanon || isGeneratingImage}
-          className={`p-2 text-white rounded transition-colors mt-4 ${!generatedHeadcanon ? "bg-gray-400" : "bg-green-500 hover:bg-green-600"} ${styles.generateButton}`}
-        >
-          {isGeneratingImage ? locale.generatingImage : locale.generateImage}
-        </button>
-
-        <div className="mt-6">
-          <h3 className="text-lg font-semibold mb-2">{locale.generatedImage}</h3>
-          {generatedImageUrl ? (
-            <img src={generatedImageUrl} alt="Generated" className={`w-full border rounded ${styles.generatedImage}`} />
-          ) : (
-            <div className={`w-full h-64 border rounded flex items-center justify-center ${styles.noImageGenerated}`}>
-              <span className="text-gray-500">{locale.noImageGenerated}</span>
-            </div>
-          )}
+      <div className="mt-8">
+        <div className="flex items-center mb-4">
+          <div className="flex-grow border-t border-gray-300"></div>
         </div>
-      </div> */}
+
+        <div className="flex flex-col md:flex-row gap-8">
+          <div className="w-full md:w-1/2">
+            <div className={styles.formSection}>
+              <label className={styles.formLabel}>
+                <Tooltip text={locale.imageStyleTooltip}>
+                  <span className={styles.infoIcon}>i</span>
+                </Tooltip>
+                {locale.imageStyle}
+              </label>
+              <div className={styles.buttonGroup}>
+                <button
+                  onClick={() => setImageStyle("anime")}
+                  className={`${styles.styleButton} ${imageStyle === "anime" ? styles.activeStyleButton : ""}`}
+                >
+                  {locale.imageStyles.anime}
+                </button>
+                <button
+                  onClick={() => setImageStyle("realistic")}
+                  className={`${styles.styleButton} ${imageStyle === "realistic" ? styles.activeStyleButton : ""}`}
+                >
+                  {locale.imageStyles.realistic}
+                </button>
+                <button
+                  onClick={() => setImageStyle("cartoon")}
+                  className={`${styles.styleButton} ${imageStyle === "cartoon" ? styles.activeStyleButton : ""}`}
+                >
+                  {locale.imageStyles.cartoon}
+                </button>
+              </div>
+            </div>
+
+            <button
+              onClick={handleGenerateImage}
+              disabled={!generatedHeadcanon || isGeneratingImage}
+              className={`w-full mt-4 px-4 p-2 text-white rounded ${styles.generateButton} ${
+                !generatedHeadcanon || isGeneratingImage ? "bg-gray-400" : ""
+              }`}
+            >
+              {isGeneratingImage ? locale.generatingImage : locale.generateImage}
+            </button>
+          </div>
+
+          <div className="w-full md:w-1/2">
+            <div className="border rounded p-4 h-full flex items-center justify-center">
+              {generatedImageUrl ? (
+                <img src={generatedImageUrl} alt="Generated Image" className="max-w-full max-h-full object-contain" />
+              ) : (
+                <div className="text-center text-gray-500">{locale.generatedImagePlaceholder}</div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
