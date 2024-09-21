@@ -282,7 +282,7 @@ export default function Generator({
               placeholder={locale.descriptionPlaceholder}
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className={`w-full p-2 border rounded ${styles.textareaField}`}
+              className={`w-full p-2 border rounded ${styles.textareaField} mb-4`}
             />
             <div className={styles.divider}></div>
           </div>
@@ -312,7 +312,7 @@ export default function Generator({
         </div>
       </div>
 
-      <div className="mt-8">
+      {/* <div className="mt-8">
         <div className="flex items-center mb-4">
           <div className="flex-grow border-t border-gray-300"></div>
         </div>
@@ -369,7 +369,7 @@ export default function Generator({
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }

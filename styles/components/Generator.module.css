@@ -221,3 +221,7 @@
 .activeStyleButton:hover {
   background-color: #2563eb;
 }
+
+.textareaFieldWithMargin {
+  margin-bottom: 1rem; /* or any value you prefer */
+}
