@@ -47,8 +47,8 @@ const Header = () => {
         <div className="flex items-center md:gap-x-12">
           <Link
             href="/"
-            aria-label="AI Anime Art Generator"
-            title="AI Anime Art Generator"
+            aria-label="AI Character Headcanon Generator"
+            title="AI Character Headcanon Generator"
             className="flex items-center space-x-1 font-bold"
           >
             <Image
@@ -59,7 +59,7 @@ const Header = () => {
               height={32}
             />
             <span className="text-gray-950 dark:text-gray-300 hidden md:block">
-              AI Anime Art Generator
+              AI Character Headcanon Generator
             </span>
           </Link>
         </div>

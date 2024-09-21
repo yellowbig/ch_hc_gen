@@ -2,8 +2,12 @@ import { LucideIcon } from "lucide-react";
 import { IconType } from "react-icons";
 
 import {
+  AiOutlineAppstore,
   AiOutlineClockCircle,
+  AiOutlineColumnHeight,
   AiOutlineEdit,
+  AiOutlineGlobal,
+  AiOutlineRobot,
   AiOutlineShareAlt,
   AiOutlineStar,
   AiOutlineTag,
@@ -12,257 +16,232 @@ import {
 
 export const FEATURES_EN = [
   {
-    title: "AI-Powered Art Creation",
-    content:
-      "Generate high-quality anime art characters and scenes using advanced AI algorithms.",
-    icon: AiOutlineTag,
+    title: "AI-Powered Headcanon Generation",
+    content: "Create unique and engaging character headcanons using advanced AI algorithms.",
+    icon: AiOutlineRobot,
   },
   {
-    title: "Customization Options",
-    content:
-      "Personalize your creations with various styles, colors, and expressions.",
+    title: "Customizable Headcanon Types",
+    content: "Choose from various headcanon types including personality traits, background stories, relationships, and more.",
+    icon: AiOutlineAppstore,
+  },
+  {
+    title: "Multiple Writing Styles",
+    content: "Generate headcanons in different tones and styles to suit your preferences.",
     icon: AiOutlineEdit,
   },
   {
-    title: "User-Friendly Interface",
-    content:
-      "Easy-to-use anime art platform suitable for both beginners and professionals.",
-    icon: AiOutlineUser,
-  },
-  {
-    title: "Fast Generation",
-    content: "Produce anime art in seconds, saving you time and effort.",
-    icon: AiOutlineClockCircle,
-  },
-  {
-    title: "Community Sharing",
-    content:
-      "Share your anime art with a vibrant community of anime art enthusiasts.",
-    icon: AiOutlineShareAlt,
-  },
-  {
-    title: "High-Resolution Outputs",
-    content:
-      "Export your anime art in high resolution for professional use and printing.",
+    title: "Preset Popular Characters",
+    content: "Select from a list of popular characters or input your own for instant headcanon creation.",
     icon: AiOutlineStar,
+  },
+  {
+    title: "Adjustable Headcanon Length",
+    content: "Control the length of your generated headcanons from very short to long detailed descriptions.",
+    icon: AiOutlineColumnHeight,
+  },
+  {
+    title: "Multi-Language Support",
+    content: "Generate headcanons in multiple languages to cater to a global audience.",
+    icon: AiOutlineGlobal,
   },
 ];
 
 export const FEATURES_ZH = [
   {
-    title: "AI驱动的艺术创作",
-    content: "使用先进的AI算法生成高质量的动漫角色和场景。",
-    icon: AiOutlineTag,
+    title: "AI驱动的Headcanon生成",
+    content: "使用先进的AI算法创建独特且引人入胜的角色headcanon。",
+    icon: AiOutlineRobot,
   },
   {
-    title: "自定义选项",
-    content: "通过各种风格、颜色和表情来个性化您的创作。",
+    title: "可定制的Headcanon类型",
+    content: "从各种headcanon类型中选择，包括性格特征、背景故事、人际关系等。",
+    icon: AiOutlineAppstore,
+  },
+  {
+    title: "多种写作风格",
+    content: "以不同的语气和风格生成headcanon，以满足您的偏好。",
     icon: AiOutlineEdit,
   },
   {
-    title: "用户友好界面",
-    content: "适合初学者和专业人士的易用平台。",
-    icon: AiOutlineUser,
-  },
-  {
-    title: "快速生成",
-    content: "在几秒钟内生成作品，节省您的时间和精力。",
-    icon: AiOutlineClockCircle,
-  },
-  {
-    title: "社区分享",
-    content: "与充满活力的动漫艺术爱好者社区分享您的作品。",
-    icon: AiOutlineShareAlt,
-  },
-  {
-    title: "高分辨率输出",
-    content: "以高分辨率导出您的作品，用于专业用途和打印。",
+    title: "预设热门角色",
+    content: "从热门角色列表中选择或输入您自己的角色，即刻创建headcanon。",
     icon: AiOutlineStar,
+  },
+  {
+    title: "可调节的Headcanon长度",
+    content: "控制生成的headcanon长度，从非常简短到长篇详细描述。",
+    icon: AiOutlineColumnHeight,
+  },
+  {
+    title: "多语言支持",
+    content: "以多种语言生成headcanon，满足全球受众的需求。",
+    icon: AiOutlineGlobal,
   },
 ];
 
 export const FEATURES_JA = [
   {
-    title: "AI駆動のアート制作",
-    content:
-      "高度なAIアルゴリズムを使用して、高品質のアニメキャラクターやシーンを生成します。",
-    icon: AiOutlineTag,
+    title: "AI駆動のヘッドカノン生成",
+    content: "高度なAIアルゴリズムを使用して、ユニークで魅力的なキャラクターのヘッドカノンを作成します。",
+    icon: AiOutlineRobot,
   },
   {
-    title: "カスタマイズオプション",
-    content: "様々なスタイル、色、表情で作品をパーソナライズできます。",
+    title: "カスタマイズ可能なヘッドカノンタイプ",
+    content: "性格特性、背景ストーリー、人間関係など、さまざまなヘッドカノンタイプから選択できます。",
+    icon: AiOutlineAppstore,
+  },
+  {
+    title: "複数の文章スタイル",
+    content: "好みに合わせて、異なるトーンやスタイルでヘッドカノンを生成します。",
     icon: AiOutlineEdit,
   },
   {
-    title: "ユーザーフレンドリーなインターフェース",
-    content: "初心者からプロまで使いやすいプラットフォームです。",
-    icon: AiOutlineUser,
-  },
-  {
-    title: "高速生成",
-    content: "数秒で作品を生成し、時間と労力を節約します。",
-    icon: AiOutlineClockCircle,
-  },
-  {
-    title: "コミュニティシェア",
-    content: "活気あるアニメアート愛好家のコミュニティで作品を共有できます。",
-    icon: AiOutlineShareAlt,
-  },
-  {
-    title: "高解像度出力",
-    content: "プロ仕様や印刷用に高解像度で作品をエクスポートできます。",
+    title: "プリセット人気キャラクター",
+    content: "人気キャラクターのリストから選択するか、独自のキャラクターを入力して、即座にヘッドカノンを作成します。",
     icon: AiOutlineStar,
+  },
+  {
+    title: "調整可能なヘッドカノンの長さ",
+    content: "非常に短いものから長い詳細な説明まで、生成されるヘッドカノンの長さをコントロールします。",
+    icon: AiOutlineColumnHeight,
+  },
+  {
+    title: "多言語サポート",
+    content: "グローバルな観客に対応するため、複数の言語でヘッドカノンを生成します。",
+    icon: AiOutlineGlobal,
   },
 ];
 
 export const FEATURES_AR = [
   {
-    title: "إنشاء الفن بواسطة الذكاء الاصطناعي",
-    content:
-      "توليد شخصيات ومشاهد أنمي عالية الجودة باستخدام خوارزميات الذكاء الاصطناعي المتقدمة.",
-    icon: AiOutlineTag,
+    title: "توليد هيدكانون بواسطة الذكاء الاصطناعي",
+    content: "إنشاء هيدكانون فريد وجذاب للشخصيات باستخدام خوارزميات الذكاء الاصطناعي المتقدمة.",
+    icon: AiOutlineRobot,
   },
   {
-    title: "خيارات التخصيص",
-    content: "تخصيص إبداعاتك بأنماط وألوان وتعبيرات متنوعة.",
+    title: "أنواع هيدكانون قابلة للتخصيص",
+    content: "اختر من بين أنواع مختلفة من الهيدكانون بما في ذلك سمات الشخصية والقصص الخلفية والعلاقات والمزيد.",
+    icon: AiOutlineAppstore,
+  },
+  {
+    title: "أساليب كتابة متعددة",
+    content: "قم بتوليد هيدكانون بنبرات وأساليب مختلفة لتناسب تفضيلاتك.",
     icon: AiOutlineEdit,
   },
   {
-    title: "واجهة سهلة الاستخدام",
-    content: "منصة سهلة الاستخدام مناسبة للمبتدئين والمحترفين على حد سواء.",
-    icon: AiOutlineUser,
-  },
-  {
-    title: "إنشاء سريع",
-    content: "إنتاج الأعمال الفنية في ثوانٍ، مما يوفر لك الوقت والجهد.",
-    icon: AiOutlineClockCircle,
-  },
-  {
-    title: "مشاركة المجتمع",
-    content: "شارك إبداعاتك مع مجتمع نابض بالحياة من عشاق فن الأنمي.",
-    icon: AiOutlineShareAlt,
-  },
-  {
-    title: "مخرجات عالية الدقة",
-    content: "تصدير أعمالك الفنية بدقة عالية للاستخدام المهني والطباعة.",
+    title: "شخصيات شهيرة مسبقة الإعداد",
+    content: "اختر من قائمة الشخصيات الشهيرة أو أدخل شخصيتك الخاصة لإنشاء هيدكانون فوري.",
     icon: AiOutlineStar,
+  },
+  {
+    title: "طول هيدكانون قابل للتعديل",
+    content: "تحكم في طول الهيدكانون المُنشأ من وصف قصير جدًا إلى وصف طويل ومفصل.",
+    icon: AiOutlineColumnHeight,
+  },
+  {
+    title: "دعم متعدد اللغات",
+    content: "قم بتوليد هيدكانون بلغات متعددة لتلبية احتياجات الجمهور العالمي.",
+    icon: AiOutlineGlobal,
   },
 ];
 
 export const FEATURES_ES = [
   {
-    title: "Creación de arte impulsada por IA",
-    content:
-      "Genera personajes y escenas de anime de alta calidad utilizando algoritmos avanzados de IA.",
-    icon: AiOutlineTag,
+    title: "Generación de Headcanon Impulsada por IA",
+    content: "Crea headcanons de personajes únicos y atractivos utilizando algoritmos avanzados de IA.",
+    icon: AiOutlineRobot,
   },
   {
-    title: "Opciones de personalización",
-    content:
-      "Personaliza tus creaciones con varios estilos, colores y expresiones.",
+    title: "Tipos de Headcanon Personalizables",
+    content: "Elige entre varios tipos de headcanon, incluyendo rasgos de personalidad, historias de fondo, relaciones y más.",
+    icon: AiOutlineAppstore,
+  },
+  {
+    title: "Múltiples Estilos de Escritura",
+    content: "Genera headcanons en diferentes tonos y estilos para adaptarse a tus preferencias.",
     icon: AiOutlineEdit,
   },
   {
-    title: "Interfaz fácil de usar",
-    content:
-      "Plataforma fácil de usar adecuada tanto para principiantes como para profesionales.",
-    icon: AiOutlineUser,
-  },
-  {
-    title: "Generación rápida",
-    content:
-      "Produce obras de arte en segundos, ahorrándote tiempo y esfuerzo.",
-    icon: AiOutlineClockCircle,
-  },
-  {
-    title: "Compartir en comunidad",
-    content:
-      "Comparte tus creaciones con una vibrante comunidad de entusiastas del arte anime.",
-    icon: AiOutlineShareAlt,
-  },
-  {
-    title: "Salidas de alta resolución",
-    content:
-      "Exporta tus obras de arte en alta resolución para uso profesional e impresión.",
+    title: "Personajes Populares Preestablecidos",
+    content: "Selecciona de una lista de personajes populares o ingresa el tuyo propio para crear headcanons al instante.",
     icon: AiOutlineStar,
+  },
+  {
+    title: "Longitud de Headcanon Ajustable",
+    content: "Controla la longitud de tus headcanons generados, desde muy cortos hasta descripciones largas y detalladas.",
+    icon: AiOutlineColumnHeight,
+  },
+  {
+    title: "Soporte Multilingüe",
+    content: "Genera headcanons en múltiples idiomas para atender a una audiencia global.",
+    icon: AiOutlineGlobal,
   },
 ];
 
 export const FEATURES_RU = [
   {
-    title: "Создание искусства с помощью ИИ",
-    content:
-      "Генерируйте высококачественных аниме-персонажей и сцены с использованием продвинутых алгоритмов ИИ.",
-    icon: AiOutlineTag,
+    title: "Генерация Хэдканонов на Основе ИИ",
+    content: "Создавайте уникальные и увлекательные хэдканоны персонажей с помощью продвинутых алгоритмов ИИ.",
+    icon: AiOutlineRobot,
   },
   {
-    title: "Возможности настройки",
-    content:
-      "Персонализируйте свои творения с помощью различных стилей, цветов и выражений.",
+    title: "Настраиваемые Типы Хэдканонов",
+    content: "Выбирайте из различных типов хэдканонов, включая черты характера, предысторию, отношения и многое другое.",
+    icon: AiOutlineAppstore,
+  },
+  {
+    title: "Множество Стилей Написания",
+    content: "Генерируйте хэдканоны в разных тонах и стилях, чтобы соответствовать вашим предпочтениям.",
     icon: AiOutlineEdit,
   },
   {
-    title: "Удобный интерфейс",
-    content:
-      "Простая в использовании платформа, подходящая как для начинающих, так и для профессионалов.",
-    icon: AiOutlineUser,
-  },
-  {
-    title: "Быстрая генерация",
-    content:
-      "Создавайте произведения искусства за секунды, экономя время и усилия.",
-    icon: AiOutlineClockCircle,
-  },
-  {
-    title: "Обмен в сообществе",
-    content:
-      "Делитесь своими творениями с активным сообществом энтузиастов аниме-искусства.",
-    icon: AiOutlineShareAlt,
-  },
-  {
-    title: "Высокое разрешение",
-    content:
-      "Экспортируйте свои работы в высоком разрешении для профессионального использования и печати.",
+    title: "Предустановленные Популярные Персонажи",
+    content: "Выбирайте из списка популярных персонажей или вводите своих собственных для мгновенного создания хэдканонов.",
     icon: AiOutlineStar,
+  },
+  {
+    title: "Регулируемая Длина Хэдканона",
+    content: "Контролируйте длину генерируемых хэдканонов от очень коротких до длинных подробных описаний.",
+    icon: AiOutlineColumnHeight,
+  },
+  {
+    title: "Поддержка Нескольких Языков",
+    content: "Генерируйте хэдканоны на нескольких языках для охвата глобальной аудитории.",
+    icon: AiOutlineGlobal,
   },
 ];
 
 export const FEATURES_HI = [
   {
-    title: "AI-संचालित कला निर्माण",
-    content:
-      "उन्नत AI एल्गोरिदम का उपयोग करके उच्च-गुणवत्ता वाले एनीमे चरित्रों और दृश्यों को उत्पन्न करें।",
-    icon: AiOutlineTag,
+    title: "AI-संचालित हेडकैनन जनरेशन",
+    content: "उन्नत AI एल्गोरिदम का उपयोग करके अद्वितीय और आकर्षक चरित्र हेडकैनन बनाएं।",
+    icon: AiOutlineRobot,
   },
   {
-    title: "अनुकूलन विकल्प",
-    content:
-      "विभिन्न शैलियों, रंगों और अभिव्यक्तियों के साथ अपनी रचनाओं को व्यक्तिगत बनाएं।",
+    title: "अनुकूलन योग्य हेडकैनन प्रकार",
+    content: "व्यक्तित्व लक्षण, पृष्ठभूमि कहानियाँ, संबंध और अधिक सहित विभिन्न हेडकैनन प्रकारों में से चुनें।",
+    icon: AiOutlineAppstore,
+  },
+  {
+    title: "कई लेखन शैलियाँ",
+    content: "अपनी पसंद के अनुसार विभिन्न टोन और शैलियों में हेडकैनन जनरेट करें।",
     icon: AiOutlineEdit,
   },
   {
-    title: "उपयोगकर्ता-अनुकूल इंटरफेस",
-    content:
-      "शुरुआती और पेशेवरों दोनों के लिए उपयुक्त आसान-से-उपयोग वाला प्लेटफॉर्म।",
-    icon: AiOutlineUser,
-  },
-  {
-    title: "तेज़ जनरेशन",
-    content:
-      "सेकंडों में कलाकृतियाँ उत्पन्न करें, जिससे आपका समय और प्रयास बचेगा।",
-    icon: AiOutlineClockCircle,
-  },
-  {
-    title: "सामुदायिक साझाकरण",
-    content:
-      "एनीमे कला के उत्साही लोगों के जीवंत समुदाय के साथ अपनी रचनाएँ साझा करें।",
-    icon: AiOutlineShareAlt,
-  },
-  {
-    title: "उच्च-रिज़ॉल्यूशन आउटपुट",
-    content:
-      "पेशेवर उपयोग और मुद्रण के लिए अपनी कलाकृतियों को उच्च रिज़ॉल्यूशन में निर्यात करें।",
+    title: "पूर्व-निर्धारित लोकप्रिय चरित्र",
+    content: "तत्काल हेडकैनन निर्माण के लिए लोकप्रिय चरित्रों की सूची से चुनें या अपना खुद का इनपुट करें।",
     icon: AiOutlineStar,
+  },
+  {
+    title: "समायोज्य हेडकैनन लंबाई",
+    content: "बहुत छोटे से लेकर लंबे विस्तृत विवरण तक अपने जनरेट किए गए हेडकैनन की लंबाई को नियंत्रित करें।",
+    icon: AiOutlineColumnHeight,
+  },
+  {
+    title: "बहु-भाषा समर्थन",
+    content: "वैश्विक दर्शकों के लिए कई भाषाओं में हेडकैनन जनरेट करें।",
+    icon: AiOutlineGlobal,
   },
 ];
 

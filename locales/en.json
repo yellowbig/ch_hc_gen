@@ -1,9 +1,9 @@
 {
   "Hero": {
-    "title1": "AI",
-    "title2": "Anime Art",
+    "title1": "Character",
+    "title2": "Headcanon",
     "title3": "Generator",
-    "description": "AI-driven cutting-edge for anime arts creation. Perfect for beginners to easily create stunning anime art without any prior experience."
+    "description": "Create unique and engaging character headcanons with our AI-powered generator. Perfect for fanfiction writers, roleplayers, and character enthusiasts."
   },
   "SocialProof": {
     "maker": "create stunning anime arts with AI"
@@ -29,25 +29,25 @@
     "description": "Here are some of the most frequently asked questions."
   },
   "CTA": {
-    "title": "Create Your Anime Art Now",
-    "description1": "Create",
-    "description2": "your anime pictures,",
-    "description3": "customize",
-    "description4": "your scenes, and",
+    "title": "Create Your Character Headcanon Now",
+    "description1": "Generate",
+    "description2": "unique character backstories,",
+    "description3": "explore",
+    "description4": "hidden traits, and",
     "description5": "bring",
-    "description6": " your anime vision to life!"
+    "description6": "your favorite characters to life!"
   },
   "CTAButton": {
-    "title": "Generate Your Picture"
+    "title": "Generate Headcanon"
   },
   "Generator": {
-    "title": "Character Headcanon Generator",
+    "title": "AI-Powered Character Headcanon Generator",
     "characterName": "Character Name",
-    "presetCharacters": "Preset Characters",
+    "presetCharacters": "Popular Characters",
     "headcanonType": "Headcanon Type",
     "writingStyle": "Writing Style",
-    "length": "Length",
-    "description": "Description",
+    "length": "Headcanon Length",
+    "description": "Add extra details about the character or specific headcanon ideas",
     "generateHeadcanon": "Generate Headcanon",
     "generatingHeadcanon": "Generating Headcanon...",
     "generatedHeadcanon": "Generated Headcanon",
@@ -87,7 +87,7 @@
       "Luke Skywalker", "Elsa", "Batman", "Wonder Woman", "Frodo Baggins",
       "Daenerys Targaryen", "Spider-Man", "Lara Croft", "Indiana Jones", "Darth Vader"
     ],
-    "characterNamePlaceholder": "Enter character name here...",
+    "characterNamePlaceholder": "Enter character name here or choose from the list below...",
     "descriptionPlaceholder": "Enter additional details about the character, such as personality traits, background story, etc...",
     "generatedHeadcanonPlaceholder": "The generated headcanon content will be displayed here..."
   }

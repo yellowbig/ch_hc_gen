@@ -1,9 +1,9 @@
 import { FooterProps } from "@/types/footer";
 
 export const footerData: FooterProps = {
-  productTitle: "AI Anime Art Generator",
+  productTitle: "AI Character Headcanon Generator",
   productDescription:
-    "A powerful AI-driven platform for creating high-quality anime characters and scenes. Perfect for beginners to easily create stunning anime art without any prior experience.",
+    "A powerful AI-driven platform for generating unique and engaging character headcanons. Perfect for fanfiction writers, roleplayers, and character enthusiasts to easily create detailed backstories, personality traits, and scenarios for their favorite characters without any prior writing experience.",
   columns: [
     {
       title: "Our Products",
@@ -50,10 +50,10 @@ export const footerData: FooterProps = {
       links: [
         {
           name: "Docs",
-          title: "AI Anime Art Generator Documentation",
+          title: "AI Character Headcanon Generator Documentation",
           href: "/",
         },
-        { name: "Blog", title: "AI Anime Art Generator Blog", href: "/" },
+        { name: "Blog", title: "AI Character Headcanon Generator Blog", href: "/" },
         {
           name: "Contact Us",
           title: "Contact Us",

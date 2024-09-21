@@ -1,21 +1,21 @@
 {
   "Hero": {
-    "title1": "AI",
-    "title2": "アニメアート",
+    "title1": "キャラクター",
+    "title2": "ヘッドカノン",
     "title3": "ジェネレーター",
-    "description": "アニメアート制作のための最先端AIテクノロジー。初心者でも簡単に、経験がなくても素晴らしいアニメアートを作成できます。"
+    "description": "AI駆動のジェネレーターで、ユニークで魅力的なキャラクターのヘッドカノンを作成しましょう。ファンフィクション作家、ロールプレイヤー、キャラクター愛好家に最適です。"
   },
   "SocialProof": {
     "maker": "AIで素晴らしいアニメアートを作成"
   },
   "Feature": {
-    "title": "特徴"
+    "title": "機能"
   },
   "Pricing": {
     "title": "料金プラン",
     "title2": "無制限アクセスを取得。",
-    "description": "このツールのすべての機能をアンロック。",
-    "doYouLike": "このツールが気に入りましたか？",
+    "description": "このツールのすべての機能のロックを解除。",
+    "doYouLike": "このツールは気に入りましたか？",
     "follow": "私のTwitterをフォローしてください。"
   },
   "WallOfLove": {
@@ -29,30 +29,66 @@
     "description": "こちらは最もよく寄せられる質問です。"
   },
   "CTA": {
-    "title": "今すぐアニメアートを作成",
-    "description1": "作成",
-    "description2": "あなたのアニメ画像を",
-    "description3": "カスタマイズ",
-    "description4": "あなたのシーンを、そして",
-    "description5": "実現",
-    "description6": "あなたのアニメビジョンを！"
+    "title": "今すぐキャラクターのヘッドカノンを作成",
+    "description1": "生成する",
+    "description2": "ユニークなキャラクターの背景ストーリーを、",
+    "description3": "探索する",
+    "description4": "隠された特徴を、そして",
+    "description5": "命を吹き込む",
+    "description6": "あなたのお気に入りのキャラクターに！"
   },
   "CTAButton": {
-    "title": "画像を生成する"
+    "title": "ヘッドカノンを生成"
   },
   "Generator": {
-    "title": "今すぐ生成",
-    "textFullFeature": "ログイン後に全機能が利用可能です。生成には約30秒かかります。",
-    "label": "入力",
-    "description": "古い宮殿の庭園に立つドレスを着た姫。",
-    "buttonTextGenerate": "生成",
-    "buttonTextGenerating": "生成中",
-    "buttonTextCopy": "作品をコピー",
-    "resultTitle": "生成された作品",
+    "title": "AI駆動キャラクターヘッドカノンジェネレーター",
+    "characterName": "キャラクター名",
+    "presetCharacters": "人気キャラクター",
+    "headcanonType": "ヘッドカノンタイプ",
+    "writingStyle": "文章スタイル",
+    "length": "ヘッドカノンの長さ",
+    "description": "キャラクターに関する追加詳細や特定のヘッドカノンのアイデアを追加",
+    "generateHeadcanon": "ヘッドカノンを生成",
+    "generatingHeadcanon": "ヘッドカノンを生成中...",
+    "generatedHeadcanon": "生成されたヘッドカノン",
+    "imageStyle": "画像スタイル",
+    "generateImage": "画像を生成",
+    "generatingImage": "画像を生成中...",
+    "generatedImage": "生成された画像",
+    "noImageGenerated": "まだ画像が生成されていません",
+    "writingStyleTooltip": "生成されるヘッドカノンのトーンとスタイルを選択してください。",
+    "headcanonTypeTooltip": "生成したいヘッドカノンのタイプを選択してください。",
+    "lengthTooltip": "生成されるヘッドカノンの長さを決定してください。",
+    "headcanonTypes": {
+      "personality": "性格特性",
+      "background": "バックグラウンドストーリー",
+      "relationships": "人間関係",
+      "hobbies": "趣味と興味",
+      "secrets": "秘密"
+    },
+    "styles": {
+      "normal": "普通",
+      "funny": "面白い",
+      "dark": "ダーク"
+    },
+    "lengths": {
+      "very_short": "とても短い",
+      "short": "短い",
+      "medium": "中程度",
+      "long": "長い"
+    },
+    "imageStyles": {
+      "anime": "アニメ",
+      "realistic": "リアリスティック",
+      "cartoon": "カートゥーン"
+    },
     "allPresetCharacters": [
-      "ハリー・ポッター", "シャーロック・ホームズ", "ハーマイオニー・グレンジャー", "トニー・スターク", "カットニス・エヴァディーン",
+      "ハリー・ポッター", "シャーロック・ホームズ", "ハーマイオニー・グレンジャー", "トニー・スターク", "カットニス・エバディーン",
       "ルーク・スカイウォーカー", "エルサ", "バットマン", "ワンダーウーマン", "フロド・バギンズ",
-      "デナーリス・ターガリエン", "スパイダーマン", "ララ・クロフト", "インディ・ジョーンズ", "ダース・ベイダー"
-    ]
+      "デナーリス・ターガリエン", "スパイダーマン", "ララ・クロフト", "インディアナ・ジョーンズ", "ダース・ベイダー"
+    ],
+    "characterNamePlaceholder": "ここにキャラクター名を入力するか、下のリストから選択してください...",
+    "descriptionPlaceholder": "キャラクターに関する追加詳細（性格特性、バックグラウンドストーリーなど）を入力してください...",
+    "generatedHeadcanonPlaceholder": "生成されたヘッドカノンの内容がここに表示されます..."
   }
 }

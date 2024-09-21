@@ -1,9 +1,9 @@
 {
   "Hero": {
-    "title1": "AI",
-    "title2": "动漫艺术",
+    "title1": "角色",
+    "title2": "Headcanon",
     "title3": "生成器",
-    "description": "AI驱动的动漫艺术创作工具。适合初学者，无需任何经验即可轻松创作令人惊叹的动漫艺术。"
+    "description": "使用我们的AI驱动生成器创建独特且引人入胜的角色Headcanon。非常适合同人小说作者、角色扮演者和角色爱好者。"
   },
   "SocialProof": {
     "maker": "用AI创作令人惊叹的动漫艺术"
@@ -13,61 +13,61 @@
   },
   "Pricing": {
     "title": "定价",
-    "title2": "获得无限访问权限",
-    "description": "解锁此工具的所有功能",
+    "title2": "获得无限访问权限。",
+    "description": "解锁此工具的所有功能。",
     "doYouLike": "你喜欢这个工具吗？",
     "follow": "关注我的Twitter。"
   },
   "WallOfLove": {
     "title": "赞美墙",
     "description1": "如果你使用这个工具并在Twitter上推荐它，",
-    "description2": "请告诉我。",
-    "description3": "我会在这里展示你的推文和推荐。"
+    "description2": "请告诉我",
+    "description3": "。我会在这里展示你的推文和推荐。"
   },
   "FAQ": {
     "title": "常见问题",
     "description": "这里是一些最常见的问题。"
   },
   "CTA": {
-    "title": "立即创作你的动漫艺术",
-    "description1": "创作",
-    "description2": "你的动漫图片，",
-    "description3": "定制",
-    "description4": "你的场景，并",
-    "description5": "实现",
-    "description6": "你的动漫愿望！"
+    "title": "立即创建你的角色Headcanon",
+    "description1": "生成",
+    "description2": "独特的角色背景故事，",
+    "description3": "探索",
+    "description4": "隐藏的特质，并",
+    "description5": "为",
+    "description6": "你喜爱的角色注入生命！"
   },
   "CTAButton": {
-    "title": "生成图片"
+    "title": "生成Headcanon"
   },
   "Generator": {
-    "title": "角色头脑风暴生成器",
+    "title": "AI驱动的角色Headcanon生成器",
     "characterName": "角色名称",
-    "presetCharacters": "预设角色",
-    "headcanonType": "头脑风暴类型",
+    "presetCharacters": "热门角色",
+    "headcanonType": "Headcanon类型",
     "writingStyle": "写作风格",
-    "length": "长度",
-    "description": "描述",
-    "generateHeadcanon": "生成头脑风暴",
-    "generatingHeadcanon": "正在生成头脑风暴...",
-    "generatedHeadcanon": "生成的头脑风暴",
+    "length": "Headcanon长度",
+    "description": "添加关于角色的额外细节或特定的Headcanon想法",
+    "generateHeadcanon": "生成Headcanon",
+    "generatingHeadcanon": "正在生成Headcanon...",
+    "generatedHeadcanon": "已生成的Headcanon",
     "imageStyle": "图片风格",
     "generateImage": "生成图片",
     "generatingImage": "正在生成图片...",
-    "generatedImage": "生成的图片",
-    "noImageGenerated": "还没有生成图片",
-    "writingStyleTooltip": "选择生成的头脑风暴的写作风格",
-    "headcanonTypeTooltip": "选择你想要生成的头脑风暴类型",
-    "lengthTooltip": "选择生成的头脑风暴的长度",
+    "generatedImage": "已生成的图片",
+    "noImageGenerated": "尚未生成图片",
+    "writingStyleTooltip": "为你生成的Headcanon选择语气和风格。",
+    "headcanonTypeTooltip": "选择你想要生成的Headcanon类型。",
+    "lengthTooltip": "决定你想要生成的Headcanon的长度。",
     "headcanonTypes": {
       "personality": "性格特征",
       "background": "背景故事",
-      "relationships": "关系网络",
-      "hobbies": "兴趣爱好",
+      "relationships": "人际关系",
+      "hobbies": "爱好与兴趣",
       "secrets": "秘密"
     },
     "styles": {
-      "normal": "正常",
+      "normal": "普通",
       "funny": "搞笑",
       "dark": "黑暗"
     },
@@ -83,12 +83,12 @@
       "cartoon": "卡通"
     },
     "allPresetCharacters": [
-      "哈利·波特", "夏洛克·福尔摩斯", "赫敏·格兰杰", "托尼·斯塔克", "凯特尼斯·艾佛丁",
-      "卢克·天行者", "艾尔莎", "蝙蝠侠", "神奇女侠", "佛罗多·巴金斯",
+      "哈利·波特", "夏洛克·福尔摩斯", "赫敏·格兰杰", "托尼·斯塔克", "凯特尼斯·伊夫狄恩",
+      "卢克·天行者", "艾莎", "蝙蝠侠", "神奇女侠", "佛罗多·巴金斯",
       "丹妮莉丝·坦格利安", "蜘蛛侠", "劳拉·克劳馥", "印第安纳·琼斯", "达斯·维达"
     ],
-    "characterNamePlaceholder": "在此输入角色名称...",
-    "descriptionPlaceholder": "输入角色的额外描述，如性格特点、背景故事等...",
-    "generatedHeadcanonPlaceholder": "生成的头脑风暴内容将显示在这里..."
+    "characterNamePlaceholder": "在此输入角色名称或从下面的列表中选择...",
+    "descriptionPlaceholder": "输入关于角色的额外细节，如性格特征、背景故事等...",
+    "generatedHeadcanonPlaceholder": "生成的Headcanon内容将显示在这里..."
   }
 }

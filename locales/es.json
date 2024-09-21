@@ -1,12 +1,12 @@
 {
   "Hero": {
-    "title1": "IA",
-    "title2": "Arte de Anime",
-    "title3": "Generador",
-    "description": "Tecnología de vanguardia impulsada por IA para la creación de arte de anime. Perfecto para principiantes para crear fácilmente arte de anime impresionante sin experiencia previa."
+    "title1": "Generador",
+    "title2": "de Headcanons",
+    "title3": "de Personajes",
+    "description": "Crea headcanons de personajes únicos y atractivos con nuestro generador impulsado por IA. Perfecto para escritores de fanfiction, jugadores de rol y entusiastas de los personajes."
   },
   "SocialProof": {
-    "maker": "Crea arte de anime asombroso con IA"
+    "maker": "crea impresionantes artes de anime con IA"
   },
   "Feature": {
     "title": "Características"
@@ -20,7 +20,7 @@
   },
   "WallOfLove": {
     "title": "Muro de Amor",
-    "description1": "Si has usado esta herramienta y la has recomendado en Twitter,",
+    "description1": "Si usas esta herramienta y la recomiendas en tu Twitter,",
     "description2": "por favor házmelo saber",
     "description3": ". Mostraré tu tweet y recomendación aquí."
   },
@@ -29,30 +29,66 @@
     "description": "Aquí están algunas de las preguntas más frecuentes."
   },
   "CTA": {
-    "title": "Crea tu arte de anime ahora",
-    "description1": "Crea",
-    "description2": "tus imágenes de anime,",
-    "description3": "Personaliza",
-    "description4": "tus escenas, y",
-    "description5": "Haz realidad",
-    "description6": "tu visión de anime!"
+    "title": "Crea tu Headcanon de Personaje Ahora",
+    "description1": "Genera",
+    "description2": "historias de fondo únicas para personajes,",
+    "description3": "explora",
+    "description4": "rasgos ocultos, y",
+    "description5": "da vida",
+    "description6": "a tus personajes favoritos!"
   },
   "CTAButton": {
-    "title": "Generar tu imagen"
+    "title": "Generar Headcanon"
   },
   "Generator": {
-    "title": "Generar ahora",
-    "textFullFeature": "Todas las funciones están disponibles después de iniciar sesión. La generación tarda unos 30 segundos.",
-    "label": "Entrada",
-    "description": "Una princesa vestida de gala se encuentra en el jardín de un antiguo palacio.",
-    "buttonTextGenerate": "Generar",
-    "buttonTextGenerating": "Generando",
-    "buttonTextCopy": "Copiar arte",
-    "resultTitle": "Arte generado",
+    "title": "Generador de Headcanons de Personajes Impulsado por IA",
+    "characterName": "Nombre del Personaje",
+    "presetCharacters": "Personajes Populares",
+    "headcanonType": "Tipo de Headcanon",
+    "writingStyle": "Estilo de Escritura",
+    "length": "Longitud del Headcanon",
+    "description": "Añade detalles extra sobre el personaje o ideas específicas de headcanon",
+    "generateHeadcanon": "Generar Headcanon",
+    "generatingHeadcanon": "Generando Headcanon...",
+    "generatedHeadcanon": "Headcanon Generado",
+    "imageStyle": "Estilo de Imagen",
+    "generateImage": "Generar Imagen",
+    "generatingImage": "Generando Imagen...",
+    "generatedImage": "Imagen Generada",
+    "noImageGenerated": "Aún no se ha generado ninguna imagen",
+    "writingStyleTooltip": "Elige el tono y estilo para tu headcanon generado.",
+    "headcanonTypeTooltip": "Selecciona el tipo de headcanon que quieres generar.",
+    "lengthTooltip": "Decide cuán largo quieres que sea tu headcanon generado.",
+    "headcanonTypes": {
+      "personality": "Rasgos de Personalidad",
+      "background": "Historia de Fondo",
+      "relationships": "Relaciones",
+      "hobbies": "Aficiones e Intereses",
+      "secrets": "Secretos"
+    },
+    "styles": {
+      "normal": "Normal",
+      "funny": "Divertido",
+      "dark": "Oscuro"
+    },
+    "lengths": {
+      "very_short": "Muy Corto",
+      "short": "Corto",
+      "medium": "Medio",
+      "long": "Largo"
+    },
+    "imageStyles": {
+      "anime": "Anime",
+      "realistic": "Realista",
+      "cartoon": "Caricatura"
+    },
     "allPresetCharacters": [
       "Harry Potter", "Sherlock Holmes", "Hermione Granger", "Tony Stark", "Katniss Everdeen",
-      "Luke Skywalker", "Elsa", "Batman", "Wonder Woman", "Frodo Baggins",
+      "Luke Skywalker", "Elsa", "Batman", "Mujer Maravilla", "Frodo Bolsón",
       "Daenerys Targaryen", "Spider-Man", "Lara Croft", "Indiana Jones", "Darth Vader"
-    ]
+    ],
+    "characterNamePlaceholder": "Ingresa el nombre del personaje aquí o elige de la lista de abajo...",
+    "descriptionPlaceholder": "Ingresa detalles adicionales sobre el personaje, como rasgos de personalidad, historia de fondo, etc...",
+    "generatedHeadcanonPlaceholder": "El contenido del headcanon generado se mostrará aquí..."
   }
 }

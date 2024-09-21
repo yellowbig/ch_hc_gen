@@ -2,30 +2,25 @@ import { SiteConfig } from "@/types/siteConfig";
 import { BsGithub, BsTwitterX } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 
-const OPEN_SOURCE_URL = "https://github.com/enterwiz/ai-anime-art-generator";
+const OPEN_SOURCE_URL = "https://github.com/yellowbig/ai-anime-art-generator";
 
 const baseSiteConfig = {
-  name: "AI Anime Art Generator | Create stunning anime art with the power of AI.",
+  name: "AI Character Headcanon Generator",
   description:
-    "Unleash your creativity and craft breathtaking anime art effortlessly with our advanced AI-powered generator.",
+    "Unleash your creativity and craft compelling character headcanons effortlessly with our advanced AI-powered generator",
   url: "https://aianimeartgenerator.com",
   ogImage: "",
   metadataBase: "/",
   keywords: [
-    "AI Art",
-    "Anime Art",
-    "Character Design",
-    "Digital Art",
-    "Art Generator",
   ],
   authors: [
     {
-      name: "enterwiz",
-      url: "https://github.com/enterwiz",
-      twitter: "https://twitter.com/enterwiz",
+      name: "yellowbig",
+      url: "https://github.com/yellowbig",
+      twitter: "https://twitter.com/yellowbig1",
     },
   ],
-  creator: "@enterwiz",
+  creator: "@yellowbig",
   openSourceURL: OPEN_SOURCE_URL,
   themeColors: [
     { media: "(prefers-color-scheme: light)", color: "white" },
@@ -38,21 +33,21 @@ const baseSiteConfig = {
     apple: "/logo.png",
   },
   headerLinks: [
-    { name: "repo", href: OPEN_SOURCE_URL, icon: BsGithub },
-    {
-      name: "twitter",
-      href: "https://twitter.com/enterwiz",
-      icon: BsTwitterX,
-    },
+    // { name: "repo", href: OPEN_SOURCE_URL, icon: BsGithub },
+    // {
+    //   name: "twitter",
+    //   href: "https://twitter.com/yellowbig",
+    //   icon: BsTwitterX,
+    // },
   ],
   footerLinks: [
-    { name: "email", href: "mailto:enterwizdev@outlook.com", icon: MdEmail },
-    {
-      name: "twitter",
-      href: "https://twitter.com/enterwiz",
-      icon: BsTwitterX,
-    },
-    { name: "github", href: "https://github.com/enterwiz/", icon: BsGithub },
+    { name: "email", href: "mailto:yellowbigdev@outlook.com", icon: MdEmail },
+    // {
+    //   name: "twitter",
+    //   href: "https://twitter.com/yellowbig1",
+    //   icon: BsTwitterX,
+    // },
+    // { name: "github", href: "https://github.com/yellowbig/", icon: BsGithub },
   ],
   footerProducts: [],
 };
