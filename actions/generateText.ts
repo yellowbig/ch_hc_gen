@@ -42,7 +42,7 @@ const huiyan = {
 const vip1024 = {
   baseURL: "https://vip1024.cn/v1",
   apiKey: process.env.VIP1024_API_KEY,
-  model: "gpt-4-0125-preview" //"gpt-3.5-turbo"
+  model:  "gpt-3.5-turbo" // "gpt-4-0125-preview"
 };
 
 const linktre = {
