@@ -36,6 +36,11 @@ const links = [
     href: "/#FAQ",
     title: "FAQ",
   },
+  {
+    label: "Blog",
+    href: "/blog",
+    title: "Blog",
+  },
 ];
 
 const Header = () => {
