@@ -3,7 +3,6 @@ import CreditsNum from "@/components/header/CreditsNum";
 import HeaderLinks from "@/components/header/HeaderLinks";
 import { LangSwitcher } from "@/components/header/LangSwitcher";
 import { siteConfig } from "@/config/site";
-import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/nextjs";
 import { MenuIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -83,8 +82,8 @@ const Header = () => {
           <LangSwitcher />
           <HeaderLinks />
           <ThemedButton />
-          <CreditsNum />
-          <SignedOut>
+          {/* <CreditsNum /> */}
+          {/* <SignedOut>
             <SignInButton mode="modal">
               <button className="border border-gray-300 rounded px-4 py-2 hover:border-gray-500">
                 Sign In
@@ -93,7 +92,7 @@ const Header = () => {
           </SignedOut>
           <SignedIn>
             <UserButton />
-          </SignedIn>
+          </SignedIn> */}
         </div>
 
         <div className="md:hidden">

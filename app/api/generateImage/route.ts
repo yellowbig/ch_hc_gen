@@ -1,6 +1,6 @@
 import { checkUserCredits, consumeUserCredits } from "@/actions/credits";
 import { generateImage } from "@/actions/generateImage";
-import { auth } from "@clerk/nextjs/server";
+// import { auth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 
 export const maxDuration = 60; // 这个函数可以运行最多60秒（1分钟）
@@ -13,7 +13,8 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
     const { prompt, model, aspectRatio, cost } = body;
-    const { userId } = auth();
+    // const { userId } = auth();
+    const userId = "mock-user-id"; // 模拟用户ID
 
     if (!userId) {
       return new NextResponse("Unauthorized", { status: 401 });

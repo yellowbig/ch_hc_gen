@@ -1,12 +1,13 @@
 import { checkUserCredits, consumeUserCredits } from "@/actions/credits";
 import { generateText } from "@/actions/generateText";
-import { auth } from "@clerk/nextjs/server";
+// import { auth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(req: NextRequest) {
   const body = await req.json();
   const { prompt } = body;
-  const { userId } = auth();
+  // const { userId } = auth();
+  const userId = "mock-user-id"; // 模拟用户ID
 
   if (!userId) {
     return new NextResponse("Unauthorized", { status: 401 });

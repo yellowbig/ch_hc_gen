@@ -1,9 +1,10 @@
 import { getUserCredits } from "@/actions/credits";
-import { auth } from "@clerk/nextjs/server";
+// import { auth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(req: NextRequest) {
-  const { userId }: { userId: string | null } = auth();
+  // const { userId }: { userId: string | null } = auth();
+  const userId = "mock-user-id"; // 模拟用户ID
   if (!userId) {
     const ret = JSON.stringify({ credits: 0, error: "unauthorized" });
     return new NextResponse(ret, {

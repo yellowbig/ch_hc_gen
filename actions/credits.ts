@@ -1,5 +1,18 @@
 import { UserCredits } from "@/types/user";
-import { clerkClient } from "@clerk/nextjs/server";
+// import { clerkClient } from "@clerk/nextjs/server";
+
+// 模拟用户信息
+type MockUser = {
+  privateMetadata: {
+    credits: UserCredits | null;
+  };
+};
+
+const mockUser: MockUser = {
+  privateMetadata: {
+    credits: null
+  }
+};
 
 export async function checkUserCredits(
   userId: string,
@@ -10,30 +23,37 @@ export async function checkUserCredits(
 }
 
 export async function consumeUserCredits(userId: string, count: number) {
-  var user = await clerkClient.users.getUser(userId);
+  // var user = await clerkClient.users.getUser(userId);
+  var user = mockUser;
   var credits = user.privateMetadata.credits
     ? (user.privateMetadata.credits as UserCredits)
     : generateInitialUserCredits();
 
   consumeCredits(credits, count);
 
-  await clerkClient.users.updateUserMetadata(userId, {
-    privateMetadata: {
-      credits: credits,
-    },
-  });
+  // await clerkClient.users.updateUserMetadata(userId, {
+  //   privateMetadata: {
+  //     credits: credits,
+  //   },
+  // });
+  // 模拟更新用户元数据
+  mockUser.privateMetadata.credits = credits as UserCredits | null;
 }
 
 export async function getUserCredits(userId: string): Promise<UserCredits> {
-  var user = await clerkClient.users.getUser(userId);
+  // var user = await clerkClient.users.getUser(userId);
+  var user = mockUser;
   var credits: UserCredits;
   if (!user.privateMetadata.credits) {
     credits = generateInitialUserCredits();
-    await clerkClient.users.updateUserMetadata(userId, {
-      privateMetadata: {
-        credits: credits,
-      },
-    });
+    // await clerkClient.users.updateUserMetadata(userId, {
+    //   privateMetadata: {
+    //     credits: credits,
+    //   },
+    // });
+    
+    // 模拟更新用户元数据
+    mockUser.privateMetadata.credits = credits;
   } else {
     credits = user.privateMetadata.credits as UserCredits;
   }

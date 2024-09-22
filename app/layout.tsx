@@ -10,7 +10,7 @@ import { defaultLocale } from "@/lib/i18n";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import "@/styles/loading.css";
-import { ClerkProvider } from "@clerk/nextjs";
+// import { ClerkProvider } from "@clerk/nextjs";
 import { Analytics } from "@vercel/analytics/react";
 import { Viewport } from "next";
 import { Inter as FontSans } from "next/font/google";
@@ -44,40 +44,38 @@ export default async function RootLayout({
   params: { lang: string[] | undefined };
 }) {
   return (
-    <ClerkProvider>
-      <html lang={(lang && lang[0]) || defaultLocale} suppressHydrationWarning>
-        <head>
-          <GoogleAdSense pId={process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_ID} />
-        </head>
-        <body
-          className={cn(
-            "min-h-screen bg-background font-sans antialiased",
-            fontSans.variable
-          )}
+    <html lang={(lang && lang[0]) || defaultLocale} suppressHydrationWarning>
+      <head>
+        <GoogleAdSense pId={process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_ID} />
+      </head>
+      <body
+        className={cn(
+          "min-h-screen bg-background font-sans antialiased",
+          fontSans.variable
+        )}
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme={siteConfig.nextThemeColor}
+          enableSystem
         >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme={siteConfig.nextThemeColor}
-            enableSystem
-          >
-            <Header />
-            <main className="flex flex-col items-center py-6">{children}</main>
-            <ToastContainer />
-            <Footer />
-            <Analytics />
-            <TailwindIndicator />
-          </ThemeProvider>
-          {process.env.NODE_ENV === "development" ? (
-            <></>
-          ) : (
-            <>
-              <GoogleAnalytics />
-              <BaiDuAnalytics />
-            </>
-          )}
-        </body>
-      </html>
-    </ClerkProvider>
+          <Header />
+          <main className="flex flex-col items-center py-6">{children}</main>
+          <ToastContainer />
+          <Footer />
+          <Analytics />
+          <TailwindIndicator />
+        </ThemeProvider>
+        {process.env.NODE_ENV === "development" ? (
+          <></>
+        ) : (
+          <>
+            <GoogleAnalytics />
+            <BaiDuAnalytics />
+          </>
+        )}
+      </body>
+    </html>
   );
 }
 
