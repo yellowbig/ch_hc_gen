@@ -43,14 +43,17 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { lang: string[] | undefined };
 }) {
+  const canonicalUrl = `https://character-headcanon-generator.com`;
+  
   return (
     <html lang={(lang && lang[0]) || defaultLocale} suppressHydrationWarning>
-      <head>
-        <GoogleAdSense pId={process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_ID} />
-      </head>
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+    <head>
+      <GoogleAdSense pId={process.env.NEXT_PUBLIC_GOOGLE_ADSENSE_ID}/>
+      <link rel="canonical" href={canonicalUrl}/>
+    </head>
+    <body
+      className={cn(
+        "min-h-screen bg-background font-sans antialiased",
           fontSans.variable
         )}
       >

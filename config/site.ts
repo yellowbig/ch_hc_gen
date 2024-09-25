@@ -7,7 +7,7 @@ const OPEN_SOURCE_URL = "https://github.com/yellowbig/ai-anime-art-generator";
 const baseSiteConfig = {
   name: "AI Character Headcanon Generator",
   description:
-    "Unleash your creativity and craft compelling character headcanons effortlessly with our advanced AI-powered generator",
+    "Use our AI-powered Character Headcanon Generator to create unique and engaging character backstories. Perfect for fanfiction writers, roleplayers, and character enthusiasts.",
   url: "https://aianimeartgenerator.com",
   ogImage: "",
   metadataBase: "/",
