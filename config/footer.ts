@@ -43,6 +43,26 @@ export const footerData: FooterProps = {
           title: "Explore the Best AI Tools",
           href: "https://allinai.tools",
         },
+        {
+          name: "Flux AI Pro",
+          title: "Flux AI Pro",
+          href: "https://fluxai.pro/",
+        },
+        {
+          name: "iuu AI",
+          title: "iuu AI",
+          href: "https://iuu.ai/",
+        },
+        {
+          name: "Bai.tools",
+          title: "Best AI Tools Directory",
+          href: "https://bai.tools/",
+        },
+        {
+          name: "AI Tool Trek",
+          title: "AI Tool Trek",
+          href: "https://aitooltrek.com",
+        },
       ],
     },
     {
