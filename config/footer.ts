@@ -63,6 +63,21 @@ export const footerData: FooterProps = {
           title: "AI Tool Trek",
           href: "https://aitooltrek.com",
         },
+        {
+          name: "AI With Me",
+          title: "Discover thousands of AI Tools",
+          href: "https://aiwith.me",
+        },
+        {
+          name: "AI Tool Center",
+          title: "AI Tool Center",
+          href: "https://aitoolcenter.com/",
+        },
+        {
+          name: "Free AI Tool",
+          title: "Free AI Tool",
+          href: "https://freeaitool.ai/",
+        },
       ],
     },
     {
