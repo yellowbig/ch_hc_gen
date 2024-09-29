@@ -78,6 +78,11 @@ export const footerData: FooterProps = {
           title: "Free AI Tool",
           href: "https://freeaitool.ai/",
         },
+        {
+          name: "AI Nav Site",
+          title: "Best and Latest AI Navigation Website in 2024",
+          href: "https://navs.site",
+        },
       ],
     },
     {
