@@ -88,6 +88,11 @@ export const footerData: FooterProps = {
           title: "ToolsFine",
           href: "https://toolsfine.com",
         },
+        {
+          name: "AIPURE AI",
+          title: "AIPURE AI",
+          href: "https://aipure.ai/",
+        },
       ],
     },
     {
