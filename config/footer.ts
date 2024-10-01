@@ -83,6 +83,11 @@ export const footerData: FooterProps = {
           title: "Best and Latest AI Navigation Website in 2024",
           href: "https://navs.site",
         },
+        {
+          name: "ToolsFine",
+          title: "ToolsFine",
+          href: "https://toolsfine.com",
+        },
       ],
     },
     {
