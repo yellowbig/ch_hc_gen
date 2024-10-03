@@ -93,6 +93,26 @@ export const footerData: FooterProps = {
           title: "AIPURE AI",
           href: "https://aipure.ai/",
         },
+        {
+          name: "AIShenqi",
+          title: "最全AI工具导航网站",
+          href: "https://aishenqi.net/",
+        },
+        {
+          name: "HrefGo",
+          title: "HrefGo - Find the Latest and Most Advanced AI Tools",
+          href: "https://hrefgo.com",
+        },
+        {
+          name: "AIToolly",
+          title: "AIToolly AI Tools Directory",
+          href: "https://AIToolly.com/",
+        },
+        {
+          name: "What Is Ai Tools",
+          title: "What Is Ai Tools",
+          href: "https://whatisaitools.com/",
+        },
       ],
     },
     {
