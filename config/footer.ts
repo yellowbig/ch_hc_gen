@@ -113,6 +113,31 @@ export const footerData: FooterProps = {
           title: "What Is Ai Tools",
           href: "https://whatisaitools.com/",
         },
+        {
+          name: "MagicBox.Tools",
+          title: "MagicBox.Tools - AI Tools Directory",
+          href: "https://magicbox.tools/",
+        },
+        {
+          name: "Ahy AI",
+          title: "Ahy AI Tools Directory",
+          href: "https://ahy.ai/",
+        },
+        {
+          name: "aiComing",
+          title: "aiComing AI Tools Directory",
+          href: "https://aicoming.com/",
+        },
+        {
+          name: "Fun AI",
+          title: "Fun AI Tools Directory",
+          href: "https://funai.online/",
+        },
+        {
+          name: "See What New AI",
+          title: "See What New AI",
+          href: "https://www.seewhatnewai.com",
+        },
       ],
     },
     {
