@@ -138,6 +138,21 @@ export const footerData: FooterProps = {
           title: "See What New AI",
           href: "https://www.seewhatnewai.com",
         },
+        {
+          name: "Navai.me",
+          title: "Navai.me - AI Tools Directory",
+          href: "https://navai.me/",
+        },
+        {
+          name: "AigoTools",
+          title: "AigoTools",
+          href: "https://www.aigotools.com",
+        },
+        {
+          name: "AListForAi",
+          title: "AListForAi",
+          href: "https://alistforai.com/",
+        },
       ],
     },
     {
