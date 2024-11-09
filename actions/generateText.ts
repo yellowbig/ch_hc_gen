@@ -51,8 +51,14 @@ const linktre = {
   model: "claude-3-5-sonnet-20240620" //"gpt-4-0125-preview"
 };
 
+const yunwu = {
+  baseURL: "https://api.wlai.vip/v1",
+  apiKey: process.env.YUNWU_API_KEY,
+  model: "gpt-3.5-turbo"
+};
+
 // Set the current provider here
-const currentProvider = vip1024;
+const currentProvider = yunwu;
 
 export async function generateText(userId: string, userPrompt: string) {
   const openai = new OpenAI({
