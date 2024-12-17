@@ -54,7 +54,7 @@ const linktre = {
 const yunwu = {
   baseURL: "https://api.wlai.vip/v1",
   apiKey: process.env.YUNWU_API_KEY,
-  model: "gpt-3.5-turbo"
+  model: "gpt-4o-mini"
 };
 
 // Set the current provider here
