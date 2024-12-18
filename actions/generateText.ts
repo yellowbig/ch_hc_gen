@@ -52,7 +52,7 @@ const linktre = {
 };
 
 const yunwu = {
-  baseURL: "https://api.wlai.vip/v1",
+  baseURL: "https://yunwu.ai/v1",
   apiKey: process.env.YUNWU_API_KEY,
   model: "gpt-4o-mini"
 };
